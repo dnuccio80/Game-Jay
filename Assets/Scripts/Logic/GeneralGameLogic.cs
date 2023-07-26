@@ -9,13 +9,17 @@ using UnityEngine.UI;
 public class GeneralGameLogic : MonoBehaviour
 {
     public static GeneralGameLogic Instance { get; private set; }
+
+    [Header ("UI")]
     [SerializeField] GameObject interactText;
     [SerializeField] GameObject missionCompleteUI;
     [SerializeField] Transform ToDoListUI;
     [SerializeField] Transform pauseGameUI;
+    [Header ("Buttons")]
     [SerializeField] Button closeToDoListButton;
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
+    [SerializeField] Button backButtonControlsUI;
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
@@ -44,6 +48,10 @@ public class GeneralGameLogic : MonoBehaviour
         if (backButtonExplanation.gameObject.activeInHierarchy)
         {
             backButtonExplanation.onClick.Invoke();
+
+        } else if (backButtonControlsUI.gameObject.activeInHierarchy)
+        {
+            backButtonControlsUI.onClick.Invoke();
 
         } else if (closeToDoListButton.gameObject.activeInHierarchy)
         {
