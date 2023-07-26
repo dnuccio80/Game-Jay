@@ -72,7 +72,12 @@ public class GeneralGameLogic : MonoBehaviour
 
     private void StarterAssets_OnInteractAlternatePressed(object sender, EventArgs e)
     {
-        HandleToDoList(true);
+        if(!backButtonGamePause.gameObject.activeInHierarchy)
+        {
+            HandleToDoList(true);
+            closeToDoListButton.Select();
+        }
+       
     }
 
     private void Update()
