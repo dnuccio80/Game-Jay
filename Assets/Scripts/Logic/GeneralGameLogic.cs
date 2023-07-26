@@ -47,6 +47,7 @@ public class GeneralGameLogic : MonoBehaviour
     private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
     {
         gameOverUI.gameObject.SetActive(true);
+        lookMouse.UnlockMouse();
         restartButtonGameOver.Select();
     }
 
@@ -67,12 +68,15 @@ public class GeneralGameLogic : MonoBehaviour
             closeToDoListButton.onClick.Invoke();
         } else if (!pauseGameUI.gameObject.activeInHierarchy)
         {
-            pauseGameUI.gameObject.SetActive(true);
-            resumeButtonGamePause.Select();
-            HandleTimeScale(0f);
-            lookMouse.UnlockMouse();
-
-            StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
+            if (!gameOverUI.gameObject.activeInHierarchy)
+            {
+                pauseGameUI.gameObject.SetActive(true);
+                resumeButtonGamePause.Select();
+                HandleTimeScale(0f);
+                lookMouse.UnlockMouse();
+                StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
+            }
+            
         } else if (pauseGameUI.gameObject.activeInHierarchy)
         {
             backButtonGamePause.onClick.Invoke();
@@ -83,7 +87,7 @@ public class GeneralGameLogic : MonoBehaviour
 
     private void StarterAssets_OnInteractAlternatePressed(object sender, EventArgs e)
     {
-        if(!backButtonGamePause.gameObject.activeInHierarchy)
+        if(!backButtonGamePause.gameObject.activeInHierarchy && !gameOverUI.gameObject.activeInHierarchy)
         {
             HandleToDoList(true);
             closeToDoListButton.Select();
