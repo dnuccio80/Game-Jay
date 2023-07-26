@@ -20,6 +20,7 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
     [SerializeField] Button backButtonControlsUI;
+    [SerializeField] Button resumeButtonGamePause;
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
@@ -59,8 +60,10 @@ public class GeneralGameLogic : MonoBehaviour
         } else if (!pauseGameUI.gameObject.activeInHierarchy)
         {
             pauseGameUI.gameObject.SetActive(true);
+            resumeButtonGamePause.Select();
             HandleTimeScale(0f);
             lookMouse.UnlockMouse();
+
             StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
         } else if (pauseGameUI.gameObject.activeInHierarchy)
         {
