@@ -15,12 +15,14 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] GameObject missionCompleteUI;
     [SerializeField] Transform ToDoListUI;
     [SerializeField] Transform pauseGameUI;
+    [SerializeField] Transform gameOverUI;
     [Header ("Buttons")]
     [SerializeField] Button closeToDoListButton;
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
     [SerializeField] Button backButtonControlsUI;
     [SerializeField] Button resumeButtonGamePause;
+    [SerializeField] Button restartButtonGameOver;
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
@@ -39,7 +41,13 @@ public class GeneralGameLogic : MonoBehaviour
     {
         StarterAssets.StarterAssetsInputs.Instance.OnInteractAlternatePressed += StarterAssets_OnInteractAlternatePressed;
         StarterAssets.StarterAssetsInputs.Instance.OnReturnButtonPressed += StarterAssets_OnReturnButtonPressed;
+        PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
+    }
 
+    private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
+    {
+        gameOverUI.gameObject.SetActive(true);
+        restartButtonGameOver.Select();
     }
 
     private void StarterAssets_OnReturnButtonPressed(object sender, EventArgs e)
