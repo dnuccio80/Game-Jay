@@ -138,6 +138,11 @@ public class GeneralGameLogic : MonoBehaviour
         SceneManager.UnloadSceneAsync("Training");
     }
 
+    public void GoToIntroScene()
+    {
+        SceneManager.LoadSceneAsync("Intro", LoadSceneMode.Single);
+    }
+
     private void HandleToDoList(bool status)
     {
         ToDoListUI.gameObject.SetActive(status);
