@@ -90,8 +90,8 @@ namespace StarterAssets
 
 		public void OnInteractAlternate(InputValue value)
         {
-			OnInteractAlternatePressed?.Invoke(this, EventArgs.Empty);
-			ChangeCharacterControllerStatus(false);
+            OnInteractAlternatePressed?.Invoke(this, EventArgs.Empty);
+            ChangeCharacterControllerStatus(false);
 		}
 
 		public void OnReturn(InputValue value)
