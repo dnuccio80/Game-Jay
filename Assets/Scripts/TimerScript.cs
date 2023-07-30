@@ -12,21 +12,20 @@ public class TimerScript : MonoBehaviour
     [SerializeField] private Image colorStat;
     [SerializeField] private Transform timeOverUI;
     [SerializeField] private  TextMeshProUGUI textTimer;
-    private float timeMultiplíer;
-    private float fillAmount = 1f;
-    private float timer = 20f;
+    private float timer = 200f;
 
     private void Start()
     {
         Instance = this;
-        GeneralGameLogic.Instance.OnMissionCompleted += Instance_OnMissionCompleted;
+        //GeneralGameLogic.Instance.OnMissionCompleted += Instance_OnMissionCompleted;
         textTimer.text = timer.ToString();
     }
 
-    private void Instance_OnMissionCompleted(object sender, System.EventArgs e)
-    {
+    //private void Instance_OnMissionCompleted(object sender, System.EventArgs e)
+    //{
 
-    }
+    //}
+
 
     void Update()
     {
@@ -50,6 +49,11 @@ public class TimerScript : MonoBehaviour
             gameObject.SetActive(false);
             timeOverUI.gameObject.SetActive(true);
         }
+    }
+
+    public void SetTimerCount(float value)
+    {
+        timer = value;
     }
  }
 
