@@ -16,6 +16,12 @@ public class TimerScript : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        GeneralGameLogic.Instance.OnMissionCompleted += Instance_OnMissionCompleted;
+    }
+
+    private void Instance_OnMissionCompleted(object sender, System.EventArgs e)
+    {
+        RestartTimer();
     }
 
     private void OnEnable()
@@ -39,13 +45,13 @@ public class TimerScript : MonoBehaviour
         } else
         {
             timeOverUI.gameObject.SetActive(true);
-            gameObject.SetActive(false);
             RestartTimer();
         }   
     }
 
     private void RestartTimer()
     {
+        gameObject.SetActive(false);
         fillAmount = 1f;
     }
 
