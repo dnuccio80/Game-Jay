@@ -11,6 +11,5 @@ public class NeneMission : ExtraPlayerMission
         hamburguersGame.SetActive(true);
         hamburguersGameUI.SetActive(true);
         timerUI.gameObject.SetActive(true);
-        TimerScript.Instance.SetTimeMultiplier(.01f);
     }
 }   
