@@ -29,6 +29,13 @@ public class TimerScript : MonoBehaviour
         {
             fillAmount -= Time.deltaTime * timeMultiplíer;
             colorStat.fillAmount = fillAmount;
+            if(fillAmount < 0.25f)
+            {
+                colorStat.color = Color.red;
+            } else
+            {
+                colorStat.color = Color.cyan;
+            }
         } else
         {
             timeOverUI.gameObject.SetActive(true);
