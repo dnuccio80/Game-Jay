@@ -34,7 +34,6 @@ public class HamburguersGameLogic : MonoBehaviour
 
     private void ObjectTaken_OnPickedObject(object sender, ObjectTaken.OnPickedObjectEventArgs e)
     {
-        //Debug.Log("Recogiste: " + e.objectName);
 
         if(e.objectName == HAMBURGUER)
         {

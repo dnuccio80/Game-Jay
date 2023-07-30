@@ -7,6 +7,7 @@ public class ExtraPlayerMission : MonoBehaviour
     private bool canInteract = false;
     private DialogueExtraPlayersUI interactionState;
     [SerializeField] private Transform exclamationSign;
+    [SerializeField] public Transform timerUI;
 
     private void Start()
     {

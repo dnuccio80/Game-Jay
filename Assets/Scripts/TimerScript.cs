@@ -34,7 +34,7 @@ public class TimerScript : MonoBehaviour
             timeOverUI.gameObject.SetActive(true);
             gameObject.SetActive(false);
             RestartTimer();
-        }
+        }   
     }
 
     private void RestartTimer()
