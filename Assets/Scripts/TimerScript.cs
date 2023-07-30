@@ -9,12 +9,18 @@ public class TimerScript : MonoBehaviour
 
 
     [SerializeField] private Image colorStat;
+    [SerializeField] private Transform timeOverUI;
     private float timeMultiplíer;
     private float fillAmount = 1f;
 
     private void Start()
     {
         Instance = this;
+    }
+
+    private void OnEnable()
+    {
+        SetTimeMultiplier(.3f);
     }
 
     void Update()
@@ -25,6 +31,7 @@ public class TimerScript : MonoBehaviour
             colorStat.fillAmount = fillAmount;
         } else
         {
+            timeOverUI.gameObject.SetActive(true);
             gameObject.SetActive(false);
             RestartTimer();
         }
