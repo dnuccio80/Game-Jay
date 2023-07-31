@@ -26,6 +26,7 @@ public class GeneralGameLogic : MonoBehaviour
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
+    public event EventHandler OnMissionTimeOver;
     private LookMouse lookMouse;
 
 
@@ -117,6 +118,12 @@ public class GeneralGameLogic : MonoBehaviour
     {
         isInMission = true;
         OnMissionPlaying?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void MissionTimeOVer()
+    {
+        isInMission = false;
+        OnMissionTimeOver?.Invoke(this, EventArgs.Empty);
     }
 
     public void ChangeInChillMode()
