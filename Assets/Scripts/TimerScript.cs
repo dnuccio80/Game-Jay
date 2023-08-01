@@ -26,7 +26,7 @@ public class TimerScript : MonoBehaviour
 
     private void Instance_OnMissionCompleted(object sender, System.EventArgs e)
     {
-        gameObject.SetActive(false);
+        textTimer.gameObject.SetActive(false);
         RestartTimerCount();
     }
 
