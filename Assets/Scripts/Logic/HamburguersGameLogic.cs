@@ -14,6 +14,7 @@ public class HamburguersGameLogic : MonoBehaviour
     [SerializeField] private GameObject greenTickHamburguer;
     [SerializeField] private GameObject greenTickBottle;
     [SerializeField] private GameObject aura;
+    [SerializeField] private Transform[] objectsInGame;
     private int cantBurguers = 15;
     private int cantBottles = 10;
 
@@ -52,4 +53,18 @@ public class HamburguersGameLogic : MonoBehaviour
     }
 
 
+    public void RestartGameStats()
+    {
+        cantBurguers = 15;
+        cantBottles = 10;
+        hamburguersCantTextUI.text = cantBurguers.ToString();
+        bottlesCantTextUI.text = cantBottles.ToString();
+        greenTickHamburguer.SetActive(false);
+        greenTickBottle.SetActive(false);
+
+        foreach (Transform obj in objectsInGame)
+        {
+            obj.gameObject.SetActive(true);
+        }
+    }
 }

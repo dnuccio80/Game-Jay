@@ -8,11 +8,18 @@ public class ExtraPlayerMission : MonoBehaviour
     private DialogueExtraPlayersUI interactionState;
     [SerializeField] private Transform exclamationSign;
     [SerializeField] public Transform timerUI;
+    [SerializeField] public int _numberMission;
 
     private void Start()
     {
         interactionState = GetComponent<DialogueExtraPlayersUI>();
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StartesAssets_OnInteractButtonPressed;
+        TimerScript.Instance.OnMissionTimeOver += TimerScript_OnMissionTimeOver;
+    }
+
+    private void TimerScript_OnMissionTimeOver(object sender, System.EventArgs e)
+    {
+        RestartGame();
     }
 
     private void StartesAssets_OnInteractButtonPressed(object sender, System.EventArgs e)
@@ -21,7 +28,7 @@ public class ExtraPlayerMission : MonoBehaviour
         {
             if(!GeneralGameLogic.Instance.GetModeStatus())
             {
-                GeneralGameLogic.Instance.ChangeInMissionMode();
+                GeneralGameLogic.Instance.ChangeInMissionMode(_numberMission);
                 StartMission();
                 exclamationSign.gameObject.SetActive(false);
             }
@@ -31,6 +38,11 @@ public class ExtraPlayerMission : MonoBehaviour
 
     public virtual void StartMission() { 
     
+    }
+
+    public virtual void RestartGame()
+    {
+
     }
 
 }

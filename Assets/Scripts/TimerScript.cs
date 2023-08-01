@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TimerScript : MonoBehaviour
 {
     public static TimerScript Instance { get; private set; }
 
-
-    [SerializeField] private Image colorStat;
     [SerializeField] private Transform timeOverUI;
     [SerializeField] private  TextMeshProUGUI textTimer;
+
+    public event EventHandler OnMissionTimeOver;
+
     private float timer = 20f;
 
     private void Start()
     {
         Instance = this;
         GeneralGameLogic.Instance.OnMissionCompleted += Instance_OnMissionCompleted;
-
         textTimer.text = timer.ToString();
     }
 
@@ -29,34 +30,32 @@ public class TimerScript : MonoBehaviour
         RestartTimerCount();
     }
 
-    private void OnEnable()
-    {
-       
-    }
-
-
     void Update()
     {
-
-        if (timer > 0f)
+        if(textTimer.gameObject.activeInHierarchy)
         {
-            timer -= Time.deltaTime * .9f;
-            textTimer.text = Mathf.Round(timer).ToString();
-            if (timer < 10f)
+            if (timer > 0f)
             {
-                textTimer.color = Color.red;
+                timer -= Time.deltaTime * .9f;
+                textTimer.text = Mathf.Round(timer).ToString();
+                if (timer < 10f)
+                {
+                    textTimer.color = Color.red;
+                }
+                else
+                {
+                    textTimer.color = Color.cyan;
+
+                }
             }
             else
             {
-                textTimer.color = Color.cyan;
-
+                textTimer.gameObject.SetActive(false);
+                timeOverUI.gameObject.SetActive(true);
+                OnMissionTimeOver?.Invoke(this, EventArgs.Empty);
             }
         }
-        else
-        {
-            gameObject.SetActive(false);
-            timeOverUI.gameObject.SetActive(true);
-        }
+      
     }
 
     public void SetTimerCount(float value)

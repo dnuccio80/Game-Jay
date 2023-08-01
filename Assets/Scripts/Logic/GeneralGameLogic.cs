@@ -28,13 +28,16 @@ public class GeneralGameLogic : MonoBehaviour
     public event EventHandler OnMissionPlaying;
     public event EventHandler OnMissionTimeOver;
     private LookMouse lookMouse;
+    public int numberMission;
 
+    private HamburguersGameLogic hamburguersGameLogic;
 
     private void Awake()
     {
         Instance = this;
         LoadLevelScene();
         lookMouse = GetComponent<LookMouse>();
+        hamburguersGameLogic = GetComponent<HamburguersGameLogic>();
     }
 
 
@@ -43,7 +46,33 @@ public class GeneralGameLogic : MonoBehaviour
         StarterAssets.StarterAssetsInputs.Instance.OnInteractAlternatePressed += StarterAssets_OnInteractAlternatePressed;
         StarterAssets.StarterAssetsInputs.Instance.OnReturnButtonPressed += StarterAssets_OnReturnButtonPressed;
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
+        TimerScript.Instance.OnMissionTimeOver += TimerScript_OnMissionTimeOver;
     }
+
+    private void TimerScript_OnMissionTimeOver(object sender, EventArgs e)
+    {
+        switch(numberMission)
+        {
+            case 1:
+                Debug.Log("Termino la mission 1: la del nene");
+                hamburguersGameLogic.RestartGameStats();
+                break;
+            case 2:
+                Debug.Log("Termino la mission 2: la de la lady");
+                break;
+            case 3:
+                Debug.Log("Termino la mission 3: la de Magician");
+                break;
+            case 4:
+                Debug.Log("Termino la mission 4: la del fighter");
+                break;
+            case 5:
+                Debug.Log("Termino la mission 5: la de la Nena");
+                break;
+        }
+        ChangeInChillMode();
+    }
+
 
     private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
     {
@@ -108,23 +137,20 @@ public class GeneralGameLogic : MonoBehaviour
         }
     }
 
+   
+    public void ChangeInMissionMode(int _numberMission)
+    {
+        isInMission = true;
+        OnMissionPlaying?.Invoke(this, EventArgs.Empty);
+        numberMission = _numberMission;
+    }
+
     public void MissionComplete()
     {
         OnMissionCompleted?.Invoke(this, EventArgs.Empty);
         missionCompleteUI.SetActive(true);
     }
 
-    public void ChangeInMissionMode()
-    {
-        isInMission = true;
-        OnMissionPlaying?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void MissionTimeOVer()
-    {
-        isInMission = false;
-        OnMissionTimeOver?.Invoke(this, EventArgs.Empty);
-    }
 
     public void ChangeInChillMode()
     {
@@ -158,6 +184,11 @@ public class GeneralGameLogic : MonoBehaviour
     public void HandleTimeScale(float value)
     {
         Time.timeScale = value;
+    }
+
+    public int GetMissionNumber()
+    {
+        return numberMission;
     }
 }
     

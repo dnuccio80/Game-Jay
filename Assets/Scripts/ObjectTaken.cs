@@ -17,7 +17,8 @@ public class ObjectTaken : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             SoundManagerScript.Instance.PlaySoundItemObtained();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
             OnPickedObject?.Invoke(this, new OnPickedObjectEventArgs { objectName = itemsToSpawnSO.nameObject });
             //Debug.Log("Comiste: " + itemsToSpawnSO.nameObject);
         }
