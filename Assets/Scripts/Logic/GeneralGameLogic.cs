@@ -51,25 +51,23 @@ public class GeneralGameLogic : MonoBehaviour
 
     private void TimerScript_OnMissionTimeOver(object sender, EventArgs e)
     {
+
+        // If want to add timer to other missions;
         switch(numberMission)
         {
             case 1:
-                Debug.Log("Termino la mission 1: la del nene");
                 hamburguersGameLogic.RestartGameStats();
                 break;
             case 2:
-                Debug.Log("Termino la mission 2: la de la lady");
                 break;
             case 3:
-                Debug.Log("Termino la mission 3: la de Magician");
                 break;
             case 4:
-                Debug.Log("Termino la mission 4: la del fighter");
                 break;
             case 5:
-                Debug.Log("Termino la mission 5: la de la Nena");
                 break;
         }
+
         ChangeInChillMode();
     }
 
