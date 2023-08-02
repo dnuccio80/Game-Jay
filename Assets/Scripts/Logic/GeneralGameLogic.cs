@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class GeneralGameLogic : MonoBehaviour
@@ -23,6 +24,9 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] Button backButtonControlsUI;
     [SerializeField] Button resumeButtonGamePause;
     [SerializeField] Button restartButtonGameOver;
+    [Header ("Timelines")]
+    [SerializeField] private PlayableDirector restartGameTimeline;
+
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
@@ -193,6 +197,11 @@ public class GeneralGameLogic : MonoBehaviour
     public int GetMissionNumber()
     {
         return numberMission;
+    }
+
+    public void PlayRestartTimeline()
+    {
+        restartGameTimeline.Play();
     }
 }
     

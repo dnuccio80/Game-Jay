@@ -109,14 +109,16 @@ public class PlayerStats : MonoBehaviour
         OnPlayerRevive?.Invoke(this, EventArgs.Empty);
         lifeSlider.value = life / 100f;
         gunSlider.value = gunAmmo / 100f;
-        animator.SetTrigger("Revive");
         characterController.enabled = true;
         thirdPersonController.enabled = true;
         thirdPersonShooterController.enabled = true;
-        tracePlayer.MovePlayerToScene();
     }
 
-    
+    public void RevivePlayer()
+    {
+        animator.SetTrigger("Revive");
+    }
+
 
 
 }
