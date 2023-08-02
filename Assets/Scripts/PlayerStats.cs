@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
     private TracePlayer tracePlayer;
 
     public event EventHandler OnPlayerDeath;
+    public event EventHandler OnPlayerRevive;
 
     [Range(0,100)] private int life = 100;
     private int maxLife = 100;
@@ -105,6 +106,7 @@ public class PlayerStats : MonoBehaviour
     {
         life = 100;
         gunAmmo = maxGunAmmo;
+        OnPlayerRevive?.Invoke(this, EventArgs.Empty);
         lifeSlider.value = life / 100f;
         gunSlider.value = gunAmmo / 100f;
         animator.SetTrigger("Revive");

@@ -37,7 +37,13 @@ public class NavMeshEnemies : MonoBehaviour
     private void Start()
     {
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
+        PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
         enemyStats.OnEnemyDeath += EnemyStats_OnEnemyDeath;
+    }
+
+    private void PlayerStats_OnPlayerRevive(object sender, System.EventArgs e)
+    {
+        playerAlive = true;
     }
 
     private void EnemyStats_OnEnemyDeath(object sender, System.EventArgs e)
