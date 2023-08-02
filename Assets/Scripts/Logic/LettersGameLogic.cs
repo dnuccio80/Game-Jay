@@ -12,6 +12,8 @@ public class LettersGameLogic : MonoBehaviour
     private int lettersCatched = 0;
 
     [SerializeField] private Transform aura;
+    [SerializeField] private Transform[] objectsInGame;
+
     private void Awake()
     {
         Instance = this;
@@ -27,5 +29,19 @@ public class LettersGameLogic : MonoBehaviour
             OnAllLettersCatched?.Invoke(this, EventArgs.Empty);
             aura.gameObject.SetActive(true);
         }
+    }
+
+
+    public void RestartGameStats()
+    {
+        lettersCatched = 0;
+        aura.gameObject.SetActive(false);
+
+
+        foreach (Transform obj in objectsInGame)
+        {
+            obj.gameObject.SetActive(true);
+        }
+
     }
 }

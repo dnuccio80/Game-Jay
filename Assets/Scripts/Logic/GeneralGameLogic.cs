@@ -27,6 +27,7 @@ public class GeneralGameLogic : MonoBehaviour
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
     public event EventHandler OnMissionTimeOver;
+    public event EventHandler OnRestartByDead;
     private LookMouse lookMouse;
     public int numberMission;
 
@@ -71,6 +72,11 @@ public class GeneralGameLogic : MonoBehaviour
         ChangeInChillMode();
     }
 
+
+    public void RestartByDead()
+    {
+        OnRestartByDead?.Invoke(this, EventArgs.Empty);
+    }
 
     private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
     {

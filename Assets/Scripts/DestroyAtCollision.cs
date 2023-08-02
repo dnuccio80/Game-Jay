@@ -12,7 +12,8 @@ public class DestroyAtCollision : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
             SoundManagerScript.Instance.PlaySoundItemObtained();
             tudzoneLetter.color = new Color(0, 228, 253, 255);
             tudzoneLetter.faceColor = new Color(0, 255, 0, 255);
@@ -21,6 +22,10 @@ public class DestroyAtCollision : MonoBehaviour
 
         
     }
+
+    
+
+
 
 
 }

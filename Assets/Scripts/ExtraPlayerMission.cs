@@ -15,6 +15,12 @@ public class ExtraPlayerMission : MonoBehaviour
         interactionState = GetComponent<DialogueExtraPlayersUI>();
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StartesAssets_OnInteractButtonPressed;
         TimerScript.Instance.OnMissionTimeOver += TimerScript_OnMissionTimeOver;
+        GeneralGameLogic.Instance.OnRestartByDead += GeneralGameLogic_OnRestartByDead;
+    }
+
+    private void GeneralGameLogic_OnRestartByDead(object sender, System.EventArgs e)
+    {
+        RestartGame();
     }
 
     private void TimerScript_OnMissionTimeOver(object sender, System.EventArgs e)

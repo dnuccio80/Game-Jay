@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     private CharacterController characterController;
     private ThirdPersonController thirdPersonController;
     private ThirdPersonShooterController thirdPersonShooterController;
+    private TracePlayer tracePlayer;
 
     public event EventHandler OnPlayerDeath;
 
@@ -32,6 +33,7 @@ public class PlayerStats : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         thirdPersonController = GetComponent<ThirdPersonController>();
         thirdPersonShooterController = GetComponent<ThirdPersonShooterController>();
+        tracePlayer = GetComponent<TracePlayer>();
     }
 
     private void Start()
@@ -98,6 +100,21 @@ public class PlayerStats : MonoBehaviour
     {
         return (gunAmmo <= 0);
     }
+
+    public void RestartPlayerStats()
+    {
+        life = 100;
+        gunAmmo = maxGunAmmo;
+        lifeSlider.value = life / 100f;
+        gunSlider.value = gunAmmo / 100f;
+        animator.SetTrigger("Revive");
+        characterController.enabled = true;
+        thirdPersonController.enabled = true;
+        thirdPersonShooterController.enabled = true;
+        tracePlayer.MovePlayerToScene();
+    }
+
+    
 
 
 }
