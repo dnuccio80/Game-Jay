@@ -7,11 +7,14 @@ public class CubicGameLogic : MonoBehaviour
 {
 
     public event EventHandler OnAllCubicPosicioned;
+    public event EventHandler OnRestartGame;
 
     public static CubicGameLogic Instance { get; private set; }
     private float totalCubics;
     public bool hasAnObject = false;
     private int numberCoincidence;
+
+
 
     private void Awake()
     {
@@ -35,6 +38,11 @@ public class CubicGameLogic : MonoBehaviour
         return hasAnObject;
     }
 
-
+    public void RestartGameStats()
+    {
+        numberCoincidence = 0;
+        hasAnObject = false;
+        OnRestartGame?.Invoke(this,EventArgs.Empty);
+    }
 
 }

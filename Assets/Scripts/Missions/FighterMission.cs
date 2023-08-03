@@ -11,4 +11,16 @@ public class FighterMission : ExtraPlayerMission
         cubicGame.SetActive(true);
         cubicGameUI.SetActive(true);
     }
+
+    public override void RestartGame()
+    {
+        if (GeneralGameLogic.Instance.GetMissionNumber() == _numberMission)
+        {
+            cubicGame.SetActive(false);
+            cubicGameUI.SetActive(false);
+            exclamationSign.gameObject.SetActive(true);
+
+            CubicGameLogic.Instance.RestartGameStats();
+        }
+    }
 }   

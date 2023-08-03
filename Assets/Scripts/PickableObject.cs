@@ -14,6 +14,9 @@ public class PickableObject : MonoBehaviour
     [SerializeField] private Transform PlayerInteractionZone;
     [SerializeField] private CinemachineVirtualCamera pickableGameCamera;
     [SerializeField] private Transform interactUI;
+    [SerializeField] private Transform cubicGameParent;
+    private Vector3 initialPosition;
+
     public event EventHandler OnPickedObject;
     public event EventHandler OnDropedObject;
 
@@ -28,12 +31,21 @@ public class PickableObject : MonoBehaviour
     {
         myRB = GetComponent<Rigidbody>();
         Instance = this;
+        initialPosition = transform.position;
     }
 
 
     private void Start()
     {
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StarterAssets_OnInteractButtonPressed;
+        CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
+    }
+
+    private void CubicGameLogic_OnRestartGame(object sender, EventArgs e)
+    {
+        transform.SetParent(cubicGameParent);
+        transform.position = initialPosition;
+        RestartDeliveredStatus();
     }
 
     private void StarterAssets_OnInteractButtonPressed(object sender, System.EventArgs e)
@@ -104,6 +116,13 @@ public class PickableObject : MonoBehaviour
         isDeliveredRight = true;
         showInteractUI = false;
         canInteract = false;
+    }
+
+    public void RestartDeliveredStatus()
+    {
+        isDeliveredRight = false;
+        showInteractUI = true;
+        canInteract = true;
     }
 
 }

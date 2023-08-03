@@ -415,7 +415,6 @@ namespace StarterAssets
         {
             MoveSpeed = _newSpeed;
             SprintSpeed = _newSpeed;
-            Debug.Log("seteando speed");
         }
 
         public void ChangeJumpStatus(bool _newJumpStatus)

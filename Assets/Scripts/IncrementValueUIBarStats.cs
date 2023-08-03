@@ -14,6 +14,17 @@ public class IncrementValueUIBarStats : MonoBehaviour
         colorStat.fillAmount = 0f;
     }
 
+    private void Start()
+    {
+        CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
+    }
+
+    private void CubicGameLogic_OnRestartGame(object sender, System.EventArgs e)
+    {
+        fillAmount = 0f;
+        gameObject.SetActive(false);
+    }
+
     void Update()
     {
         if(fillAmount < 0.25f)

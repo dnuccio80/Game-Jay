@@ -8,7 +8,16 @@ public class ReceptorScript : MonoBehaviour
     [SerializeField] string objectToReceive;
     [SerializeField] Transform UIColorCircleStat;
     private bool posedInPlace = false;
-     
+
+    private void Start()
+    {
+        CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
+    }
+
+    private void CubicGameLogic_OnRestartGame(object sender, System.EventArgs e)
+    {
+        RestartGameStats();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,19 +27,20 @@ public class ReceptorScript : MonoBehaviour
 
             if (nameObject == objectToReceive)
             {
-                Debug.Log("Coincide");
                 other.transform.SetParent(this.transform);
                 other.transform.localPosition = Vector3.zero;
                 if(!posedInPlace) CubicGameLogic.Instance.IncreaseCoincidence();
                 posedInPlace = true;
                 other.GetComponent<PickableObject>().ChangeDeliveredStatus();
                 UIColorCircleStat.gameObject.SetActive(true);
-            } else
-            {
-                Debug.Log("No coinciden");
-            }
+            } 
         }
 
+    }
+
+    public void RestartGameStats()
+    {
+        posedInPlace = false;
     }
 
 
