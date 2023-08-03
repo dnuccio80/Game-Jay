@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExtraPlayerMission : MonoBehaviour
 {
+
     private bool canInteract = false;
     private DialogueExtraPlayersUI interactionState;
     [SerializeField] public Transform exclamationSign;

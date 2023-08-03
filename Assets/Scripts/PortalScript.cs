@@ -39,4 +39,11 @@ public class PortalScript : MonoBehaviour
                 .SetEase(Ease.InCirc);
     } 
 
+    public void RestartGameStats()
+    {
+        if(!canTraslatePlayer) {
+            catched = false;
+        }
+    }
+
 }

@@ -19,6 +19,7 @@ public class PortalsGameLogic : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        
     }
 
     public void OnRabbitCatched()
