@@ -6,6 +6,9 @@ using TMPro;
 public class HamburguersGameLogic : MonoBehaviour
 {
 
+    public static HamburguersGameLogic Instance { get; private set; }
+
+
     private GameObject[] objectsToTake;
     private const string HAMBURGUER = "Burguer";
     private const string DRINK_BOTTLE = "Drink Bottle";
@@ -20,6 +23,7 @@ public class HamburguersGameLogic : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         hamburguersCantTextUI.text = cantBurguers.ToString();
         bottlesCantTextUI.text = cantBottles.ToString();
 

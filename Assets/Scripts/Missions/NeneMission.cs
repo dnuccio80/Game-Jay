@@ -23,6 +23,8 @@ public class NeneMission : ExtraPlayerMission
             hamburguersGame.SetActive(false);
             hamburguersGameUI.SetActive(false);
             exclamationSign.gameObject.SetActive(true);
+
+            HamburguersGameLogic.Instance.RestartGameStats();
         }
     }
 }       

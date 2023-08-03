@@ -20,9 +20,15 @@ public class TimerScript : MonoBehaviour
     {
         Instance = this;
         GeneralGameLogic.Instance.OnMissionCompleted += Instance_OnMissionCompleted;
+        PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         textTimer.text = timer.ToString();
     }
 
+    private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
+    {
+        textTimer.gameObject.SetActive(false);
+        RestartTimerCount();
+    }
 
     private void Instance_OnMissionCompleted(object sender, System.EventArgs e)
     {

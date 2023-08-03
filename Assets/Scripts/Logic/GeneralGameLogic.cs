@@ -57,21 +57,21 @@ public class GeneralGameLogic : MonoBehaviour
     private void TimerScript_OnMissionTimeOver(object sender, EventArgs e)
     {
 
-        // If want to add timer to other missions;
-        switch(numberMission)
-        {
-            case 1:
-                hamburguersGameLogic.RestartGameStats();
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-        }
+        //// If want to add timer to other missions;
+        //switch(numberMission)
+        //{
+        //    case 1:
+        //        hamburguersGameLogic.RestartGameStats();
+        //        break;
+        //    case 2:
+        //        break;
+        //    case 3:
+        //        break;
+        //    case 4:
+        //        break;
+        //    case 5:
+        //        break;
+        //}
 
         ChangeInChillMode();
     }
