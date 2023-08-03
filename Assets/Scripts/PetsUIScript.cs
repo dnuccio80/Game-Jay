@@ -5,11 +5,18 @@ using TMPro;
 
 public class PetsUIScript : MonoBehaviour
 {
+    public static PetsUIScript Instance { get; private set; }
 
     [SerializeField] private TextMeshProUGUI petCountText;
     [SerializeField] private int petsQuantity;
     [SerializeField] private Transform greenTick;
     [SerializeField] private Transform aura;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -21,12 +28,20 @@ public class PetsUIScript : MonoBehaviour
     {
         petsQuantity--;
         petCountText.text = petsQuantity.ToString();
-        
-        if(petsQuantity == 0)
+
+        if (petsQuantity == 0)
         {
             greenTick.gameObject.SetActive(true);
             aura.gameObject.SetActive(true);
         }
 
+    } 
+
+    public void RestartGameStats()
+    {
+        petsQuantity = 4;
+        petCountText.text = petsQuantity.ToString();
+        greenTick.gameObject.SetActive(false);
+        aura.gameObject.SetActive(false);
     }
 }

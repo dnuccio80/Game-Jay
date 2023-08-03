@@ -14,4 +14,17 @@ public class MagicianMission : ExtraPlayerMission
     }
 
 
+    public override void RestartGame()
+    {
+        if (GeneralGameLogic.Instance.GetMissionNumber() == _numberMission)
+        {
+            portalsGame.SetActive(false);
+            portalsGameUI.SetActive(false);
+            exclamationSign.gameObject.SetActive(true);
+
+            PetsUIScript.Instance.RestartGameStats();
+            PortalsGameLogic.Instance.RestartGameStats();
+        }
+    }
+
 }
