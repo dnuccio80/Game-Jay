@@ -122,7 +122,7 @@ public class PickableObject : MonoBehaviour
     {
         isDeliveredRight = false;
         showInteractUI = true;
-        canInteract = true;
+        canInteract = false;
     }
 
 }
