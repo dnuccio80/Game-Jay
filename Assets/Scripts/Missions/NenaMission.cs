@@ -6,9 +6,23 @@ public class NenaMission : ExtraPlayerMission
 {
     [SerializeField] GameObject potionsGame;
     [SerializeField] GameObject potionsGameUI;
+    
     public override void StartMission()
     {
         potionsGame.SetActive(true);
         potionsGameUI.SetActive(true);
     }
+
+    public override void RestartGame()
+    {
+        if (GeneralGameLogic.Instance.GetMissionNumber() == _numberMission)
+        {
+            potionsGame.SetActive(false);
+            potionsGameUI.SetActive(false);
+            exclamationSign.gameObject.SetActive(true);
+
+            PortalsGameLogic.Instance.RestartGameStats();
+        }
+    }
+
 }   

@@ -69,4 +69,13 @@ public class PotionsGameLogic : MonoBehaviour
         }
     }
 
+    public void RestartGameStats()
+    {
+        mushroomCount = 3;
+        coinCount = 10;
+        potionsCounter = 0;
+
+        aura.SetActive(false);
+    //OnRestartGame?.Invoke(this, EventArgs.Empty);
+    }
 }   
