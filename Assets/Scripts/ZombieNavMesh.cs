@@ -15,12 +15,25 @@ public class ZombieNavMesh : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private bool canFollow = false;
     private bool firstTime = true;
-
+    private Vector3 initialPosition;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        initialPosition = transform.position;
+    }
+
+    private void Start()
+    {
+        PotionsGameLogic.Instance.OnRestartGame += Instance_OnRestartGame;
+    }
+
+    private void Instance_OnRestartGame(object sender, System.EventArgs e)
+    {
+        firstTime = true;
+        canFollow = false;
+        transform.position = initialPosition;
     }
 
     private void Update()
@@ -54,7 +67,7 @@ public class ZombieNavMesh : MonoBehaviour
             canFollow = false;
             PotionsGameLogic.Instance.ZombieArrivedFine();
             animator.SetBool("IsWalking", false);
-            Invoke("DestroyZombie", 25);
+            Invoke("DesactiveZombie", 25);
 
         }
     }
@@ -72,9 +85,10 @@ public class ZombieNavMesh : MonoBehaviour
         }
     }
 
-    private void DestroyZombie()
+    private void DesactiveZombie()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 

@@ -13,6 +13,7 @@ public class PotionsGameLogic : MonoBehaviour
     public event EventHandler OnAllMushroomCatched;
     public event EventHandler OnAllCoinsChatched;
     public event EventHandler OnZombieArrive;
+    public event EventHandler OnRestartGame;
 
     private int mushroomCount = 3;
     private int coinCount = 10;
@@ -74,8 +75,10 @@ public class PotionsGameLogic : MonoBehaviour
         mushroomCount = 3;
         coinCount = 10;
         potionsCounter = 0;
-
+        mushroomCounter.text = mushroomCount.ToString();
+        coinCounter.text = coinCount.ToString();
         aura.SetActive(false);
-    //OnRestartGame?.Invoke(this, EventArgs.Empty);
+
+        OnRestartGame?.Invoke(this, EventArgs.Empty);
     }
 }   

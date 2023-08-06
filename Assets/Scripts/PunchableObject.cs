@@ -13,6 +13,15 @@ public class PunchableObject : MonoBehaviour
     void Start()
     {
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StarterAssets_OnInteractButtonPressed;
+        PotionsGameLogic.Instance.OnRestartGame += PotionsGameLogic_OnRestartGame;
+    }
+
+    private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
+    {
+        normalBox.gameObject.SetActive(true);
+        destroyedBox.gameObject.SetActive(false);
+        objectInside.gameObject.SetActive(false);
+        objectInside.SetParent(gameObject.transform);
     }
 
     private void StarterAssets_OnInteractButtonPressed(object sender, System.EventArgs e)
@@ -46,7 +55,8 @@ public class PunchableObject : MonoBehaviour
 
     private void DestroyObject()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 
