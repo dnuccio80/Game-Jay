@@ -12,7 +12,8 @@ public class MushroomTaken : MonoBehaviour
         {
             PotionsGameLogic.Instance.AddMushroom();
             SoundManagerScript.Instance.PlaySoundItemObtained();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

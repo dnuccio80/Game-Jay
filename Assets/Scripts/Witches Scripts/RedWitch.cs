@@ -16,7 +16,7 @@ public class RedWitch : GhostScript
     {
         canGivePotion = false;
         interactiveTextUI.text = TextToInteractiveUI;
-
+        PortalsGameLogic.Instance.ChangeMiniGameStatus(false);
     }
 
     private void PotionsGameLogic_OnAllMushroomCatched(object sender, System.EventArgs e)

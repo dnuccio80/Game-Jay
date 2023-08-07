@@ -21,7 +21,7 @@ public class NenaMission : ExtraPlayerMission
             potionsGameUI.SetActive(false);
             exclamationSign.gameObject.SetActive(true);
 
-            PortalsGameLogic.Instance.RestartGameStats();
+            PotionsGameLogic.Instance.RestartGameStats();
         }
     }
 

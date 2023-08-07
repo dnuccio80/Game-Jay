@@ -30,7 +30,7 @@ public class PunchableObject : MonoBehaviour
         {
             normalBox.gameObject.SetActive(false);
             destroyedBox.gameObject.SetActive(true);
-            Invoke("DestroyObject", 7 );
+            Invoke("DestroyObject", 7 );             
             objectInside.gameObject.SetActive(true);
             objectInside.SetParent(null);
         }
