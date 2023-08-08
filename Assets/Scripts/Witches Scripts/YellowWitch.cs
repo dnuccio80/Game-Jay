@@ -14,12 +14,12 @@ public class YellowWitch : GhostScript
     private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
     {
         canGivePotion = false;
-        interactiveTextUI.text = TextToInteractiveUI;
+        miniGameFinished = false;
+        PotionsGameLogic.Instance.ChangeMiniGameStatus(false);
     }
 
     private void PotionsGameLogic_OnAllCoinsChatched(object sender, System.EventArgs e)
     {
-        TextToInteractiveUI = "Great! See you soon :)";
         canGivePotion = true;
     }
 }

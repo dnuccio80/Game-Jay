@@ -34,6 +34,7 @@ public class ZombieNavMesh : MonoBehaviour
         firstTime = true;
         canFollow = false;
         transform.position = initialPosition;
+        gameObject.SetActive(false);
     }
 
     private void Update()

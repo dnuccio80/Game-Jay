@@ -14,14 +14,14 @@ public class RedWitch : GhostScript
 
     private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
     {
+        miniGameFinished = false;
+        PotionsGameLogic.Instance.ChangeMiniGameStatus(false);
         canGivePotion = false;
-        interactiveTextUI.text = TextToInteractiveUI;
-        PortalsGameLogic.Instance.ChangeMiniGameStatus(false);
     }
 
     private void PotionsGameLogic_OnAllMushroomCatched(object sender, System.EventArgs e)
     {
-        TextToInteractiveUI = "Great! See you soon :)";
+        
         canGivePotion = true;
     }
 

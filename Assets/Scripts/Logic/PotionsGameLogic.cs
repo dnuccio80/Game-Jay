@@ -24,6 +24,8 @@ public class PotionsGameLogic : MonoBehaviour
     [SerializeField] private Transform coinUI;
     [SerializeField] private Transform mushroomUI;
     [SerializeField] private GameObject aura;
+    
+    private bool miniGameInProgress = false;
 
     private void Awake()
     {
@@ -69,6 +71,17 @@ public class PotionsGameLogic : MonoBehaviour
             aura.SetActive(true);
         }
     }
+
+    public bool GetMiniGameStatus()
+    {
+        return miniGameInProgress;
+    }
+
+    public void ChangeMiniGameStatus(bool _newStatus)
+    {
+        miniGameInProgress = _newStatus;
+    }
+
 
     public void RestartGameStats()
     {

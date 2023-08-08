@@ -10,14 +10,15 @@ public class GhostScript : MonoBehaviour
     [SerializeField] public TextMeshProUGUI interactiveTextUI;
     [SerializeField] public AudioClip itemObtainedSound;
     [TextArea]
-    [SerializeField] public string TextToInteractiveUI;
+    [SerializeField] protected string TextToInteractiveUI;
     [SerializeField] private GameObject panelGameUI;
     [SerializeField] private GameObject miniGameObjects;
     [Header("UI Section")]
     [SerializeField] private GameObject potionMovementUI;
     private Animator animator;
+    protected string textGameDone = "Great! See you soon :)";
     public bool canGivePotion = false;
-    private bool miniGameFinished = false;
+    protected bool miniGameFinished = false;
 
     private void Awake()
     {
@@ -30,8 +31,14 @@ public class GhostScript : MonoBehaviour
         {
             animator.SetBool("PlayerIsNear", true);
             interactivePanel.SetActive(true);
-            interactiveTextUI.text = TextToInteractiveUI;
 
+            if(canGivePotion)
+            {
+                interactiveTextUI.text = textGameDone;
+            } else
+            {
+                interactiveTextUI.text = TextToInteractiveUI;
+            }
 
             if (canGivePotion)
             {
@@ -40,15 +47,15 @@ public class GhostScript : MonoBehaviour
                 if (panelGameUI != null) panelGameUI.SetActive(false);
                 miniGameObjects.SetActive(false);
                 canGivePotion = false;
-                PortalsGameLogic.Instance.ChangeMiniGameStatus(false);
+                PotionsGameLogic.Instance.ChangeMiniGameStatus(false);
                 miniGameFinished = true;
                 AudioSource.PlayClipAtPoint(itemObtainedSound, transform.position);
             }
-            else if (!canGivePotion && !PortalsGameLogic.Instance.GetMiniGameStatus() && !miniGameFinished)
+            else if (!canGivePotion && !PotionsGameLogic.Instance.GetMiniGameStatus() && !miniGameFinished)
             {
                 if (panelGameUI != null) panelGameUI.SetActive(true);
                 miniGameObjects.SetActive(true);
-                PortalsGameLogic.Instance.ChangeMiniGameStatus(true);
+                PotionsGameLogic.Instance.ChangeMiniGameStatus(true);
             }
         }
     }

@@ -9,6 +9,12 @@ public class MovePots2d : MonoBehaviour
 
     [SerializeField] private Vector3 pointToMove;
     [SerializeField] private Image potToActive;
+    private Vector3 initialPosition;
+
+    private void Awake()
+    {
+        initialPosition = transform.position;
+    }
 
     private void OnEnable()
     {
@@ -16,6 +22,7 @@ public class MovePots2d : MonoBehaviour
         .SetEase(Ease.InQuint)
         .OnComplete(() =>
         {
+            transform.DOLocalMove(Vector3.zero, .5f);
             transform.gameObject.SetActive(false);
             potToActive.color = Color.white;
         });

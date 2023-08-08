@@ -18,6 +18,7 @@ public class PunchableObject : MonoBehaviour
 
     private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
     {
+        gameObject.SetActive(true);
         normalBox.gameObject.SetActive(true);
         destroyedBox.gameObject.SetActive(false);
         objectInside.gameObject.SetActive(false);
@@ -30,11 +31,9 @@ public class PunchableObject : MonoBehaviour
         {
             normalBox.gameObject.SetActive(false);
             destroyedBox.gameObject.SetActive(true);
-            Invoke("DestroyObject", 7 );             
             objectInside.gameObject.SetActive(true);
-            objectInside.SetParent(null);
         }
-    }
+    }       
 
     private void OnTriggerStay(Collider other)
     {
@@ -55,8 +54,12 @@ public class PunchableObject : MonoBehaviour
 
     private void DestroyObject()
     {
-        //Destroy(gameObject);
         gameObject.SetActive(false);
+    }
+
+    public void InvokeDestroyObject(float time)
+    {
+        Invoke("DestroyObject", time);
     }
 
 

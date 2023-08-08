@@ -5,6 +5,12 @@ using UnityEngine;
 public class MushroomTaken : MonoBehaviour
 {
 
+    [SerializeField] private PunchableObject boxParent;
+
+    private void Awake()
+    {
+        boxParent = GetComponentInParent<PunchableObject>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,8 +18,8 @@ public class MushroomTaken : MonoBehaviour
         {
             PotionsGameLogic.Instance.AddMushroom();
             SoundManagerScript.Instance.PlaySoundItemObtained();
-            //Destroy(gameObject);
             gameObject.SetActive(false);
+            boxParent.InvokeDestroyObject(3f);
         }
     }
 

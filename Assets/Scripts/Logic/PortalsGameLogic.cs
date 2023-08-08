@@ -11,7 +11,7 @@ public class PortalsGameLogic : MonoBehaviour
 
     public event EventHandler onPetCatched;
 
-    private bool miniGameInProgress = false;
+    
 
     [SerializeField] private GameObject imagePetPlayable;
     [SerializeField] private Transform[] rabbits;
@@ -28,15 +28,6 @@ public class PortalsGameLogic : MonoBehaviour
         imagePetPlayable.SetActive(true);
     }
 
-   public bool GetMiniGameStatus()
-    {
-        return miniGameInProgress;
-    }
-
-    public void ChangeMiniGameStatus(bool _newStatus)
-    {
-        miniGameInProgress = _newStatus;
-    }
 
     public void RestartGameStats()
     {
