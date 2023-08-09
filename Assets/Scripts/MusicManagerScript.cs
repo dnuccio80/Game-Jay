@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicManagerScript : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class MusicManagerScript : MonoBehaviour
 
     [SerializeField] private AudioClip musicForMissions;
     [SerializeField] private AudioClip musicChill;
-
+    [SerializeField] private Slider sliderMusicVolume;
 
     private void Awake()
     {
@@ -34,6 +35,11 @@ public class MusicManagerScript : MonoBehaviour
     {
         audioSource.clip = musicForMissions;
         audioSource.Play();
+    }
+
+    public void ModifyMusicVolume()
+    {
+        audioSource.volume = sliderMusicVolume.value;
     }
 
 }
