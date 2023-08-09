@@ -74,6 +74,7 @@ public class GeneralGameLogic : MonoBehaviour
         //}
 
         ChangeInChillMode();
+        MusicManagerScript.Instance.PlayTimeOverMusic();
     }
 
 

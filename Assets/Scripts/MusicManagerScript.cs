@@ -11,6 +11,7 @@ public class MusicManagerScript : MonoBehaviour
 
     [SerializeField] private AudioClip musicForMissions;
     [SerializeField] private AudioClip musicChill;
+    [SerializeField] private AudioClip musicTimeOver;
     [SerializeField] private Slider sliderMusicVolume;
 
     private void Awake()
@@ -25,21 +26,40 @@ public class MusicManagerScript : MonoBehaviour
         GeneralGameLogic.Instance.OnMissionCompleted += GeneralGameLogic_OnMissionCompleted;
     }
 
+
     private void GeneralGameLogic_OnMissionCompleted(object sender, System.EventArgs e)
     {
-        audioSource.clip = musicChill;
-        audioSource.Play();
+        PlayChillMusic();
     }
 
     private void GeneralGameLogic_OnMissionPlaying(object sender, System.EventArgs e)
     {
-        audioSource.clip = musicForMissions;
-        audioSource.Play();
+        PlayMusicMission();
     }
 
     public void ModifyMusicVolume()
     {
         audioSource.volume = sliderMusicVolume.value;
+    }
+
+    private void PlayMusicMission()
+    {
+        audioSource.clip = musicForMissions;
+        audioSource.Play();
+    }
+
+    private void PlayChillMusic()
+    {
+        audioSource.clip = musicChill;
+        audioSource.Play();
+    }
+
+    public void PlayTimeOverMusic()
+    {
+        audioSource.clip = musicTimeOver;
+        audioSource.Play();
+
+        Invoke("PlayChillMusic", 6);
     }
 
 }
