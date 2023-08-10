@@ -14,9 +14,6 @@ public class NavMeshEnemies : MonoBehaviour
     [SerializeField] private AudioClip soundDie;
 
 
-
-
-
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private bool canFollow = false;
@@ -99,7 +96,7 @@ public class NavMeshEnemies : MonoBehaviour
 
     private void PlaySoundIdle()
     {
-        audioSource.PlayOneShot(soundIdle);
+        if(playerAlive) audioSource.PlayOneShot(soundIdle);
     }
 
     private void PlaySoundRun()
