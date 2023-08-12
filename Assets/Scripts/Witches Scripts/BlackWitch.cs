@@ -16,6 +16,7 @@ public class BlackWitch : GhostScript
         canGivePotion = false;
         miniGameFinished = false;
         PotionsGameLogic.Instance.ChangeMiniGameStatus(false);
+
     }
 
     private void PotionsGameLogic_OnZombieArrive(object sender, System.EventArgs e)

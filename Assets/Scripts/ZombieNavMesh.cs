@@ -9,6 +9,9 @@ public class ZombieNavMesh : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private GameObject panelUI;
     [SerializeField] private TextMeshProUGUI textUI;
+    [SerializeField] private Transform grenTick;
+    [SerializeField] private Transform InterrogationSimbol;
+
     [TextArea]
     [SerializeField] private string textToUI;
     private Animator animator;
@@ -26,15 +29,17 @@ public class ZombieNavMesh : MonoBehaviour
 
     private void Start()
     {
-        PotionsGameLogic.Instance.OnRestartGame += Instance_OnRestartGame;
+        PotionsGameLogic.Instance.OnRestartGame += PotionsGameLogic_OnRestartGame;
     }
 
-    private void Instance_OnRestartGame(object sender, System.EventArgs e)
+    private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
     {
         firstTime = true;
         canFollow = false;
         transform.position = initialPosition;
         gameObject.SetActive(false);
+        InterrogationSimbol.gameObject.SetActive(true);
+        grenTick.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -60,6 +65,8 @@ public class ZombieNavMesh : MonoBehaviour
             {
                 panelUI.SetActive(true);
                 textUI.text = textToUI;
+                InterrogationSimbol.gameObject.SetActive(false);
+                grenTick.gameObject.SetActive(true);
             }
         }
 
@@ -88,7 +95,6 @@ public class ZombieNavMesh : MonoBehaviour
 
     private void DesactiveZombie()
     {
-        //Destroy(gameObject);
         gameObject.SetActive(false);
     }
 
