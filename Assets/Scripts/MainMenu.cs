@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] private Transform optionsMenu;
     [SerializeField] private Button playButton;
 
     private void OnEnable()
@@ -15,19 +14,10 @@ public class MainMenu : MonoBehaviour
         playButton.Select();
     }
 
-    public void OpenOptionsMenu()
-    {
-        optionsMenu.gameObject.SetActive(true);
-    }
-
-    public void CloseOptionsMenu()
-    {
-        optionsMenu.gameObject.SetActive(false);
-    }
-
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync("Training", LoadSceneMode.Additive);
     }
 
     public void QuitGame()

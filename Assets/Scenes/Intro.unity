@@ -437,6 +437,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1151172163}
+        m_TargetAssemblyTypeName: LookMouse, Assembly-CSharp
+        m_MethodName: LockMouse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &142246191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5837,6 +5849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1151172161}
   - component: {fileID: 1151172162}
+  - component: {fileID: 1151172163}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -5883,8 +5896,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2936b2926230464ba8f5b3f1b118840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 358713259}
   playButton: {fileID: 142246190}
+--- !u!114 &1151172163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151172160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37e036651702d84a847fc17bd21d8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1171538751 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6697915259813297652, guid: 17685259dffdc0f46ba764fdadf23718, type: 3}
