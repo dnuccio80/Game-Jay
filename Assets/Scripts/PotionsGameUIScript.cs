@@ -9,6 +9,7 @@ public class PotionsGameUIScript : MonoBehaviour
     [SerializeField] private Image[] potionsUI;
     [SerializeField] private Transform coinSection;
     [SerializeField] private Transform mushRoomSection;
+    [SerializeField] private Transform zombieSection;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class PotionsGameUIScript : MonoBehaviour
 
         coinSection.gameObject.SetActive(false);
         mushRoomSection.gameObject.SetActive(false);
+        zombieSection.gameObject.SetActive(false);
 
         gameObject.SetActive(false);
     }

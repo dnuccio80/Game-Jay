@@ -5,9 +5,11 @@ using UnityEngine;
 public class PunchableObject : MonoBehaviour
 {
     private bool canInteract = false;
+    private bool broken = false;
     [SerializeField] private Transform normalBox;
     [SerializeField] private Transform destroyedBox;
     [SerializeField] private Transform objectInside;
+    [SerializeField] private Transform interactText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class PunchableObject : MonoBehaviour
         destroyedBox.gameObject.SetActive(false);
         objectInside.gameObject.SetActive(false);
         objectInside.SetParent(gameObject.transform);
+        broken = false;
     }
 
     private void StarterAssets_OnInteractButtonPressed(object sender, System.EventArgs e)
@@ -32,6 +35,8 @@ public class PunchableObject : MonoBehaviour
             normalBox.gameObject.SetActive(false);
             destroyedBox.gameObject.SetActive(true);
             objectInside.gameObject.SetActive(true);
+            interactText.gameObject.SetActive(false);
+            broken = true;
         }
     }       
 
@@ -40,6 +45,7 @@ public class PunchableObject : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             canInteract = true;
+            if(!broken) interactText.gameObject.SetActive(true);
         }
     }
 
@@ -48,6 +54,7 @@ public class PunchableObject : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             canInteract = false;
+            interactText.gameObject.SetActive(false);
         }
 
     }

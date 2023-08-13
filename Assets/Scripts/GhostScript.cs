@@ -32,7 +32,7 @@ public class GhostScript : MonoBehaviour
             animator.SetBool("PlayerIsNear", true);
             interactivePanel.SetActive(true);
 
-            if(canGivePotion)
+            if(miniGameFinished)
             {
                 interactiveTextUI.text = textGameDone;
             } else
