@@ -35,6 +35,18 @@ public class ThirdPersonShooterController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
+    }
+
+    private void PlayerStats_OnPlayerDeath(object sender, System.EventArgs e)
+    {
+        animator.SetLayerWeight(1, 0f);
+        aimingRig.weight = 0f;
+
+    }
+
     private void Update()
     {
         Vector3 mouseWorldPosition = Vector3.zero;
