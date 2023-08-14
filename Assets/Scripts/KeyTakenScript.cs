@@ -10,13 +10,13 @@ public class KeyTakenScript : MonoBehaviour
 
     private void Start()
     {
-        PotionsGameLogic.Instance.OnRestartGame += PotionsGameLogic_OnRestartGame;
+        CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
     }
 
-    private void PotionsGameLogic_OnRestartGame(object sender, System.EventArgs e)
+    private void CubicGameLogic_OnRestartGame(object sender, System.EventArgs e)
     {
         gameObject.SetActive(true);
-        aura.gameObject.SetActive(true);
+        aura.gameObject.SetActive(false);
 
     }
 
