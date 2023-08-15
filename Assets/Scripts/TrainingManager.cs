@@ -24,7 +24,6 @@ public class TrainingManager : MonoBehaviour
         {
             dummiesAlive++;
         }
-
     }
 
     public void DecreaseDummiesAlive()
@@ -34,6 +33,7 @@ public class TrainingManager : MonoBehaviour
         if(dummiesAlive == 0)
         {
             endTrainingTimeline.Play();
+            firstTimeiniciated.instance.ChangeTrainingStatus();
         }
     }
 

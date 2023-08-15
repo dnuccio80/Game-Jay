@@ -11,21 +11,22 @@ public class GeneralGameLogic : MonoBehaviour
 {
     public static GeneralGameLogic Instance { get; private set; }
 
-    [Header ("UI")]
+    [Header("UI")]
     [SerializeField] GameObject interactText;
     [SerializeField] GameObject missionCompleteUI;
     [SerializeField] Transform ToDoListUI;
     [SerializeField] Transform pauseGameUI;
     [SerializeField] Transform gameOverUI;
-    [Header ("Buttons")]
+    [Header("Buttons")]
     [SerializeField] Button closeToDoListButton;
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
     [SerializeField] Button backButtonControlsUI;
     [SerializeField] Button resumeButtonGamePause;
     [SerializeField] Button restartButtonGameOver;
-    [Header ("Timelines")]
+    [Header("Timelines")]
     [SerializeField] private PlayableDirector restartGameTimeline;
+    [SerializeField] private PlayableDirector startTimeline;
 
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
@@ -35,11 +36,24 @@ public class GeneralGameLogic : MonoBehaviour
     private LookMouse lookMouse;
     public int numberMission;
 
+
+    // 1 = FirstTime ; 2 = AlreadyCharged;
+    private int alreadyCharged = 1;
+
+    private string alreadyChargedPrefsName = "FirstTime";
+
     private HamburguersGameLogic hamburguersGameLogic;
 
     private void Awake()
     {
-        Instance = this;
+        if(GeneralGameLogic.Instance == null)
+        {
+            Instance = this;
+        }else
+        {
+            Destroy(gameObject);
+        }
+        
         LoadLevelScene();
         lookMouse = GetComponent<LookMouse>();
         hamburguersGameLogic = GetComponent<HamburguersGameLogic>();
@@ -52,6 +66,7 @@ public class GeneralGameLogic : MonoBehaviour
         StarterAssets.StarterAssetsInputs.Instance.OnReturnButtonPressed += StarterAssets_OnReturnButtonPressed;
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         TimerScript.Instance.OnMissionTimeOver += TimerScript_OnMissionTimeOver;
+        PlayStartTimeline();
     }
 
     private void TimerScript_OnMissionTimeOver(object sender, EventArgs e)
@@ -203,6 +218,26 @@ public class GeneralGameLogic : MonoBehaviour
     public void PlayRestartTimeline()
     {
         restartGameTimeline.Play();
+    }
+
+    private void PlayStartTimeline()
+    {
+        startTimeline.Play();
+    }
+
+    private void SaveData()
+    {
+        PlayerPrefs.SetInt(alreadyChargedPrefsName, alreadyCharged);
+    }
+
+    private void LoadData()
+    {
+        PlayerPrefs.GetInt(alreadyChargedPrefsName);
+    }
+
+    private void OnDestroy()
+    {
+        SaveData();
     }
 }
     
