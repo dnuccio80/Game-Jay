@@ -15,20 +15,34 @@ public class MainMenu : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("FirstTime"));
     }
 
-    public void PlayGame()
+    private void Awake()
     {
-        if(!firstTimeiniciated.instance.GetTrainingStatus())
+        playButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-            SceneManager.LoadSceneAsync("Training", LoadSceneMode.Additive);
-            Debug.Log("Primera vez que iniciamos");
-        } else
-        {
-            Debug.Log("Segunda vez que iniciamos");
-        }
+            if(!firstTimeiniciated.instance.GetTrainingStatus())
+            {
+                LoaderScript.Load(LoaderScript.Scene.Training);
+            } else
+            {
+                
+            }
+        });
+    }
+
+    //public void PlayGame()
+    //{
+    //    if(!firstTimeiniciated.instance.GetTrainingStatus())
+    //    {
+    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+    //        SceneManager.LoadSceneAsync("Training", LoadSceneMode.Additive);
+    //        Debug.Log("Primera vez que iniciamos");
+    //    } else
+    //    {
+    //        Debug.Log("Segunda vez que iniciamos");
+    //    }
 
       
-    }
+    //}
 
     public void QuitGame()
     {
