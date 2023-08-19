@@ -5186,7 +5186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 750.95636, y: 448.39996}
+  m_AnchoredPosition: {x: 900.6, y: 448.39996}
   m_SizeDelta: {x: 218.10791, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1144133364
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME TITLE
+  m_text: "JAY\xB4S ADVENTURES"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4781531afb0c5a94e98af304829428d4, type: 2}
   m_sharedMaterial: {fileID: 5584858336320488964, guid: 4781531afb0c5a94e98af304829428d4, type: 2}

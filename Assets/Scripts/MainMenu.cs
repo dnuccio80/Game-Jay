@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
     private void OnEnable()
     {
         playButton.Select();
-        Debug.Log(PlayerPrefs.GetInt("FirstTime"));
     }
 
     private void Awake()
@@ -28,21 +27,6 @@ public class MainMenu : MonoBehaviour
             }
         });
     }
-
-    //public void PlayGame()
-    //{
-    //    if(!firstTimeiniciated.instance.GetTrainingStatus())
-    //    {
-    //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-    //        SceneManager.LoadSceneAsync("Training", LoadSceneMode.Additive);
-    //        Debug.Log("Primera vez que iniciamos");
-    //    } else
-    //    {
-    //        Debug.Log("Segunda vez que iniciamos");
-    //    }
-
-      
-    //}
 
     public void QuitGame()
     {
