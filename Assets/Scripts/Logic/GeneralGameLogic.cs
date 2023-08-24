@@ -27,33 +27,30 @@ public class GeneralGameLogic : MonoBehaviour
     [Header("Timelines")]
     [SerializeField] private PlayableDirector restartGameTimeline;
     [SerializeField] private PlayableDirector startTimeline;
+    [SerializeField] private PlayableDirector EndingGameTimeline;
 
     private bool isInMission = false;
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
     public event EventHandler OnMissionTimeOver;
     public event EventHandler OnRestartByDead;
+    public event EventHandler OnAllMissionsCompleted;
     private LookMouse lookMouse;
     public int numberMission;
-
-
-    // 1 = FirstTime ; 2 = AlreadyCharged;
-    private int alreadyCharged = 1;
-
-    private string alreadyChargedPrefsName = "FirstTime";
+    private int missionsCompleted;
 
     private HamburguersGameLogic hamburguersGameLogic;
 
     private void Awake()
     {
-        if(GeneralGameLogic.Instance == null)
+        if (GeneralGameLogic.Instance == null)
         {
             Instance = this;
-        }else
+        } else
         {
             Destroy(gameObject);
         }
-        
+        missionsCompleted = 4;
         LoadLevelScene();
         lookMouse = GetComponent<LookMouse>();
         hamburguersGameLogic = GetComponent<HamburguersGameLogic>();
@@ -130,7 +127,7 @@ public class GeneralGameLogic : MonoBehaviour
                 lookMouse.UnlockMouse();
                 StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
             }
-            
+
         } else if (pauseGameUI.gameObject.activeInHierarchy)
         {
             backButtonGamePause.onClick.Invoke();
@@ -141,12 +138,12 @@ public class GeneralGameLogic : MonoBehaviour
 
     private void StarterAssets_OnInteractAlternatePressed(object sender, EventArgs e)
     {
-        if(!backButtonGamePause.gameObject.activeInHierarchy && !gameOverUI.gameObject.activeInHierarchy)
+        if (!backButtonGamePause.gameObject.activeInHierarchy && !gameOverUI.gameObject.activeInHierarchy)
         {
             HandleToDoList(true);
             closeToDoListButton.Select();
         }
-       
+
     }
 
     private void Update()
@@ -161,7 +158,7 @@ public class GeneralGameLogic : MonoBehaviour
         }
     }
 
-   
+
     public void ChangeInMissionMode(int _numberMission)
     {
         isInMission = true;
@@ -171,8 +168,9 @@ public class GeneralGameLogic : MonoBehaviour
 
     public void MissionComplete()
     {
+        IncrementMissionsCompleted();
         OnMissionCompleted?.Invoke(this, EventArgs.Empty);
-        missionCompleteUI.SetActive(true);
+        if(missionsCompleted < 5) missionCompleteUI.SetActive(true);
     }
 
 
@@ -203,7 +201,7 @@ public class GeneralGameLogic : MonoBehaviour
     private void HandleToDoList(bool status)
     {
         ToDoListUI.gameObject.SetActive(status);
-    } 
+    }
 
     public void HandleTimeScale(float value)
     {
@@ -223,21 +221,23 @@ public class GeneralGameLogic : MonoBehaviour
     private void PlayStartTimeline()
     {
         startTimeline.Play();
+    } 
+
+    private void IncrementMissionsCompleted()
+    {
+        missionsCompleted++;
+
+        if(missionsCompleted == 5)
+        {
+            EndingGameTimeline.Play();
+            OnAllMissionsCompleted?.Invoke(this, EventArgs.Empty);
+        }
     }
 
-    private void SaveData()
+    public bool GetIfAllMissionsCompleted()
     {
-        PlayerPrefs.SetInt(alreadyChargedPrefsName, alreadyCharged);
-    }
-
-    private void LoadData()
-    {
-        PlayerPrefs.GetInt(alreadyChargedPrefsName);
-    }
-
-    private void OnDestroy()
-    {
-        SaveData();
+        if (missionsCompleted == 5) return true;
+        else return false;
     }
 }
     

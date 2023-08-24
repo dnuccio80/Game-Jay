@@ -26,7 +26,7 @@ public class SoundManagerScript : MonoBehaviour
 
     private void GeneralGameLogic_OnMissionCompleted(object sender, System.EventArgs e)
     {
-        audioSource.PlayOneShot(victorySound, 0.7f);
+        if(!GeneralGameLogic.Instance.GetIfAllMissionsCompleted()) audioSource.PlayOneShot(victorySound, 0.7f);
     }
 
     public void PlaySoundItemObtained()

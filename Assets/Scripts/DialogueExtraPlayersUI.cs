@@ -20,6 +20,7 @@ public class DialogueExtraPlayersUI : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         
@@ -27,7 +28,7 @@ public class DialogueExtraPlayersUI : MonoBehaviour
         {
             canInteract = true;
             animator.SetBool("IsTalking", true);
-            canvasDialogue.SetActive(true);
+            if(!GeneralGameLogic.Instance.GetIfAllMissionsCompleted()) canvasDialogue.SetActive(true);
             if(!missionIsCompleted)
             {
                 if (!GeneralGameLogic.Instance.GetModeStatus())
@@ -45,6 +46,14 @@ public class DialogueExtraPlayersUI : MonoBehaviour
             }
             
             
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "InteractionZone")
+        {
+            if (GeneralGameLogic.Instance.GetIfAllMissionsCompleted()) canvasDialogue.SetActive(false);
         }
     }
 

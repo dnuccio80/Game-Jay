@@ -25,8 +25,14 @@ public class MusicManagerScript : MonoBehaviour
     {
         GeneralGameLogic.Instance.OnMissionPlaying += GeneralGameLogic_OnMissionPlaying;
         GeneralGameLogic.Instance.OnMissionCompleted += GeneralGameLogic_OnMissionCompleted;
+        GeneralGameLogic.Instance.OnAllMissionsCompleted += GeneralGameLogic_OnAllMissionsCompleted;
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
+    }
+
+    private void GeneralGameLogic_OnAllMissionsCompleted(object sender, System.EventArgs e)
+    {
+        StopMusic();
     }
 
     private void PlayerStats_OnPlayerRevive(object sender, System.EventArgs e)
@@ -41,7 +47,7 @@ public class MusicManagerScript : MonoBehaviour
 
     private void GeneralGameLogic_OnMissionCompleted(object sender, System.EventArgs e)
     {
-        PlayChillMusic();
+        if(!GeneralGameLogic.Instance.GetIfAllMissionsCompleted()) PlayChillMusic();
     }
 
     private void GeneralGameLogic_OnMissionPlaying(object sender, System.EventArgs e)
