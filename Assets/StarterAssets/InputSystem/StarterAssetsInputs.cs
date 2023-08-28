@@ -162,7 +162,7 @@ namespace StarterAssets
         {
 			return hasAnObject;
         }
-			
+
 		public void ChangeCharacterControllerStatus(bool status)
         {
 			thirdPersonController.enabled = status;

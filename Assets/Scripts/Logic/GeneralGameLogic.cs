@@ -16,7 +16,6 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] GameObject missionCompleteUI;
     [SerializeField] Transform ToDoListUI;
     [SerializeField] Transform pauseGameUI;
-    [SerializeField] Transform statsPanelUI;
     [SerializeField] Transform gameOverUI;
     [Header("Buttons")]
     [SerializeField] Button closeToDoListButton;
@@ -172,7 +171,6 @@ public class GeneralGameLogic : MonoBehaviour
         IncrementMissionsCompleted();
         OnMissionCompleted?.Invoke(this, EventArgs.Empty);
         if(missionsCompleted < 5) missionCompleteUI.SetActive(true);
-
     }
 
 
@@ -193,11 +191,6 @@ public class GeneralGameLogic : MonoBehaviour
     public void RemoveTrainingScene()
     {
         SceneManager.UnloadSceneAsync("Training");
-    }
-
-    public void RemoveLevelScene()
-    {
-        SceneManager.UnloadSceneAsync("Level1Game");
     }
 
     public void GoToIntroScene()
@@ -236,7 +229,6 @@ public class GeneralGameLogic : MonoBehaviour
 
         if(missionsCompleted == 5)
         {
-            statsPanelUI.gameObject.SetActive(false);
             EndingGameTimeline.Play();
             OnAllMissionsCompleted?.Invoke(this, EventArgs.Empty);
         }
