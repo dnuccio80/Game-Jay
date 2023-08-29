@@ -28,13 +28,10 @@ public static class LoaderScript
 
 
     public static void LoaderCallback()
-    {
-        if(firstTimeiniciated.instance.GetTrainingStatus())
-        {
+    { 
+            SceneManager.LoadScene(Scene.DatesScene.ToString() , LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(targetScene.ToString(), LoadSceneMode.Additive);
 
-        }
-        SceneManager.LoadScene(Scene.DatesScene.ToString() , LoadSceneMode.Single);
-        SceneManager.LoadSceneAsync(targetScene.ToString(), LoadSceneMode.Additive);
     }
 
 }

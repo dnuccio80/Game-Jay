@@ -21,9 +21,9 @@ public class MainMenu : MonoBehaviour
             if(!firstTimeiniciated.instance.GetTrainingStatus())
             {
                 LoaderScript.Load(LoaderScript.Scene.Training);
-            } else
+            } else if(firstTimeiniciated.instance.GetTrainingStatus())
             {
-                
+                LoaderScript.Load(LoaderScript.Scene.Level1Game);
             }
         });
     }
