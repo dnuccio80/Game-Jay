@@ -59,6 +59,26 @@ MonoBehaviour:
     m_Key: BackButton
     m_Metadata:
       m_Items: []
+  - m_Id: 99242537738240
+    m_Key: FIrstDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99967758065664
+    m_Key: SecondDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100123937169408
+    m_Key: ThirdDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100461083713536
+    m_Key: FourthDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100649617678336
+    m_Key: FifthDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
