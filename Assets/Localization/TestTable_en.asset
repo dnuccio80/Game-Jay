@@ -26,6 +26,46 @@ MonoBehaviour:
     m_Localized: PLAY
     m_Metadata:
       m_Items: []
+  - m_Id: 96795572396032
+    m_Localized: OPTIONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96858163994624
+    m_Localized: QUIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96993228972032
+    m_Localized: MUSIC VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97093107933184
+    m_Localized: SOUND VOLUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97213274742784
+    m_Localized: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97267133800448
+    m_Localized: 'Privacy
+
+      Policy'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97365825773568
+    m_Localized: 'Help &
+
+      Assistance'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97447673421824
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97509048672256
+    m_Localized: BACK
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

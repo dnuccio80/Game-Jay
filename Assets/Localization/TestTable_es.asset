@@ -26,6 +26,46 @@ MonoBehaviour:
     m_Localized: COMENZAR
     m_Metadata:
       m_Items: []
+  - m_Id: 96795572396032
+    m_Localized: OPCIONES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96858163994624
+    m_Localized: SALIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96993228972032
+    m_Localized: VOLUMEN DE LA MUSICA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97093107933184
+    m_Localized: SONIDO DE LA MUSICA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97213274742784
+    m_Localized: LENGUAJE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97267133800448
+    m_Localized: 'Politica de
+
+      privacidad'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97365825773568
+    m_Localized: 'Ayuda y
+
+      Asistencia'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97447673421824
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97509048672256
+    m_Localized: VOLVER
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

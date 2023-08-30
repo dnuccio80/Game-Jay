@@ -23,6 +23,42 @@ MonoBehaviour:
     m_Key: PlayButton
     m_Metadata:
       m_Items: []
+  - m_Id: 96795572396032
+    m_Key: OptionsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96858163994624
+    m_Key: QuitButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96993228972032
+    m_Key: MusicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97093107933184
+    m_Key: SoundVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97213274742784
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97267133800448
+    m_Key: PrivacyButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97365825773568
+    m_Key: HelpButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97447673421824
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97509048672256
+    m_Key: BackButton
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
