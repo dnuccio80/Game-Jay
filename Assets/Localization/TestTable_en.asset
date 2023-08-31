@@ -97,6 +97,10 @@ MonoBehaviour:
     m_Localized: Press Interact button to accept
     m_Metadata:
       m_Items: []
+  - m_Id: 346918583885824
+    m_Localized: left
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

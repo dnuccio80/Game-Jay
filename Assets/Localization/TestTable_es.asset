@@ -97,6 +97,10 @@ MonoBehaviour:
     m_Localized: "Presiona el bot\xF3n de interacci\xF3n para aceptar"
     m_Metadata:
       m_Items: []
+  - m_Id: 346918583885824
+    m_Localized: restantes
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

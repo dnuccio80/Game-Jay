@@ -83,6 +83,10 @@ MonoBehaviour:
     m_Key: InteractButtonPressUI
     m_Metadata:
       m_Items: []
+  - m_Id: 346918583885824
+    m_Key: "LeftText\t"
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
