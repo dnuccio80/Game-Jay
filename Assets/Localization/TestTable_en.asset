@@ -93,6 +93,10 @@ MonoBehaviour:
       Let\xB4s go !"
     m_Metadata:
       m_Items: []
+  - m_Id: 124722691268608
+    m_Localized: Press Interact button to accept
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -79,6 +79,10 @@ MonoBehaviour:
     m_Key: FifthDialogueTimelineTraining
     m_Metadata:
       m_Items: []
+  - m_Id: 124722691268608
+    m_Key: InteractButtonPressUI
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

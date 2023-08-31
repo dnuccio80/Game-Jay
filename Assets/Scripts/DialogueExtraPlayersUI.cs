@@ -10,7 +10,9 @@ public class DialogueExtraPlayersUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dialogueUI;
     [SerializeField] private GameObject interactTextUI;
     [TextArea]
-    [SerializeField] string textDialogue;
+    [SerializeField] string textDialogueEnglish;
+    [TextArea]
+    [SerializeField] string textDialogueSpanish;
     private Animator animator;
     private bool canInteract = false;
     public bool missionIsCompleted = false;
@@ -33,15 +35,40 @@ public class DialogueExtraPlayersUI : MonoBehaviour
             {
                 if (!GeneralGameLogic.Instance.GetModeStatus())
                 {
-                    dialogueUI.text = textDialogue;
+                    if (PlayerPrefs.GetInt("language") == 0)
+                    {
+                        dialogueUI.text = textDialogueEnglish;
+                    }
+                    else if (PlayerPrefs.GetInt("language") == 1)
+                    {
+                        dialogueUI.text = textDialogueSpanish;
+                    }
+
+
+
                 }
                 else
                 {
-                    dialogueUI.text = "You are already in a Mission";
+                    if(PlayerPrefs.GetInt("language") == 0)
+                    {
+                        dialogueUI.text = "You are already in a Mission";
+                    }
+                    else if(PlayerPrefs.GetInt("language") == 1)
+                    {
+                        dialogueUI.text = "Ya estás en una misión";
+                    }
                 }
             } else
             {
-                dialogueUI.text = "Thanks for helping me ! :)";
+
+                if(PlayerPrefs.GetInt("language") == 0)
+                {
+                    dialogueUI.text = "Thanks for helping me ! :)";
+                }
+                else if (PlayerPrefs.GetInt("language") == 1)
+                {
+                   dialogueUI.text = "Gracias por ayudarme ! :)";
+                }
                 canInteract = false;
             }
             
