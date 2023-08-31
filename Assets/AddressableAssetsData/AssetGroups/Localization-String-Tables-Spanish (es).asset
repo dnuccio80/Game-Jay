@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-es
     - Preload
+  - m_GUID: 45f41d6d485ce304a94919b4bc3ca3aa
+    m_Address: ToDoTable_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 3277d5f0ecd72834a98c52829412eb47, type: 2}
   m_SchemaSet:

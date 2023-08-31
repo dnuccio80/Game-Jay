@@ -87,6 +87,66 @@ MonoBehaviour:
     m_Key: "LeftText\t"
     m_Metadata:
       m_Items: []
+  - m_Id: 351805732380672
+    m_Key: MissionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351862175129600
+    m_Key: CompleteText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352130870632448
+    m_Key: CubicGameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353039512068096
+    m_Key: LettersGameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 354644609294336
+    m_Key: CloseButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359114638450688
+    m_Key: TimeOverTItle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359705901096960
+    m_Key: RestartButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360580929380352
+    m_Key: PauseTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360785439449088
+    m_Key: ResumeButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360960933322752
+    m_Key: ControlsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361274231054336
+    m_Key: ControlsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361372256133120
+    m_Key: MovePlayerText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361482205618176
+    m_Key: InteractionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361600484990976
+    m_Key: OpenToDoListText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361987103350784
+    m_Key: TheEndText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

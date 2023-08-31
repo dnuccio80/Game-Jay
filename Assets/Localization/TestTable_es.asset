@@ -35,11 +35,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 96993228972032
-    m_Localized: VOLUMEN DE LA MUSICA
+    m_Localized: "VOLUMEN DE M\xDASICA"
     m_Metadata:
       m_Items: []
   - m_Id: 97093107933184
-    m_Localized: SONIDO DE LA MUSICA
+    m_Localized: VOLUMEN DE SONIDO
     m_Metadata:
       m_Items: []
   - m_Id: 97213274742784
@@ -99,6 +99,66 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 346918583885824
     m_Localized: restantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351805732380672
+    m_Localized: "Misi\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351862175129600
+    m_Localized: Completa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352130870632448
+    m_Localized: Coloca los cubos de forma correcta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353039512068096
+    m_Localized: Junta todas las letras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 354644609294336
+    m_Localized: CERRAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359114638450688
+    m_Localized: TIEMPO AGOTADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359705901096960
+    m_Localized: REINICIAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360580929380352
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360785439449088
+    m_Localized: REANUDAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360960933322752
+    m_Localized: CONTROLES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361274231054336
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361372256133120
+    m_Localized: Mover Jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361482205618176
+    m_Localized: "Interacci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361600484990976
+    m_Localized: Abrir Lista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361987103350784
+    m_Localized: "EL \n     FIN"
     m_Metadata:
       m_Items: []
   references:
