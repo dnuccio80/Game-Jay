@@ -147,6 +147,14 @@ MonoBehaviour:
     m_Key: TheEndText
     m_Metadata:
       m_Items: []
+  - m_Id: 746090029998080
+    m_Key: LoadingText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747177168429056
+    m_Key: InteractText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -161,6 +161,14 @@ MonoBehaviour:
     m_Localized: "THE \n     END"
     m_Metadata:
       m_Items: []
+  - m_Id: 746090029998080
+    m_Localized: LOADING...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747177168429056
+    m_Localized: Interact
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
