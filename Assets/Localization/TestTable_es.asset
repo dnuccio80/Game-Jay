@@ -169,6 +169,22 @@ MonoBehaviour:
     m_Localized: Interactuar
     m_Metadata:
       m_Items: []
+  - m_Id: 751485582663680
+    m_Localized: Apuntar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751694081515520
+    m_Localized: Disparar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751812977451008
+    m_Localized: Click Derecho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751963884314624
+    m_Localized: Click Izquierdo
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
