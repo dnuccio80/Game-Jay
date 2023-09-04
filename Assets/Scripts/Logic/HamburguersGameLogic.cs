@@ -14,8 +14,6 @@ public class HamburguersGameLogic : MonoBehaviour
     private const string DRINK_BOTTLE = "Drink Bottle";
     [SerializeField] private TextMeshProUGUI hamburguersCantTextUI;
     [SerializeField] private TextMeshProUGUI bottlesCantTextUI;
-    [SerializeField] private GameObject greenTickHamburguer;
-    [SerializeField] private GameObject greenTickBottle;
     [SerializeField] private GameObject aura;
     [SerializeField] private Transform[] objectsInGame;
     private int cantBurguers = 15;
@@ -44,13 +42,11 @@ public class HamburguersGameLogic : MonoBehaviour
         {
             cantBurguers--;
             hamburguersCantTextUI.text = cantBurguers.ToString();
-            if (cantBurguers == 0) greenTickHamburguer.SetActive(true);
 
         } else if (e.objectName == DRINK_BOTTLE)
         {
             cantBottles--;
             bottlesCantTextUI.text = cantBottles.ToString();
-            if (cantBottles == 0) greenTickBottle.SetActive(true);
         }
 
         if (cantBurguers == 0 && cantBottles == 0) aura.SetActive(true);
@@ -63,8 +59,7 @@ public class HamburguersGameLogic : MonoBehaviour
         cantBottles = 10;
         hamburguersCantTextUI.text = cantBurguers.ToString();
         bottlesCantTextUI.text = cantBottles.ToString();
-        greenTickHamburguer.SetActive(false);
-        greenTickBottle.SetActive(false);
+
 
         foreach (Transform obj in objectsInGame)
         {

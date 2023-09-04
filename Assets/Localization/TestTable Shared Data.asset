@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TestTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TestTable
+  m_TableCollectionNameGuidString: 658f05f886e301d40b97a3d515aebefc
+  m_Entries:
+  - m_Id: 31771156480
+    m_Key: GameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134816817152
+    m_Key: PlayButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96795572396032
+    m_Key: OptionsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96858163994624
+    m_Key: QuitButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96993228972032
+    m_Key: MusicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97093107933184
+    m_Key: SoundVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97213274742784
+    m_Key: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97267133800448
+    m_Key: PrivacyButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97365825773568
+    m_Key: HelpButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97447673421824
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97509048672256
+    m_Key: BackButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99242537738240
+    m_Key: FIrstDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99967758065664
+    m_Key: SecondDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100123937169408
+    m_Key: ThirdDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100461083713536
+    m_Key: FourthDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100649617678336
+    m_Key: FifthDialogueTimelineTraining
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124722691268608
+    m_Key: InteractButtonPressUI
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346918583885824
+    m_Key: "LeftText\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351805732380672
+    m_Key: MissionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351862175129600
+    m_Key: CompleteText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352130870632448
+    m_Key: CubicGameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353039512068096
+    m_Key: LettersGameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 354644609294336
+    m_Key: CloseButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359114638450688
+    m_Key: TimeOverTItle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359705901096960
+    m_Key: RestartButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360580929380352
+    m_Key: PauseTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360785439449088
+    m_Key: ResumeButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360960933322752
+    m_Key: ControlsButton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361274231054336
+    m_Key: ControlsText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361372256133120
+    m_Key: MovePlayerText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361482205618176
+    m_Key: InteractionText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361600484990976
+    m_Key: OpenToDoListText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361987103350784
+    m_Key: TheEndText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746090029998080
+    m_Key: LoadingText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747177168429056
+    m_Key: InteractText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751485582663680
+    m_Key: AimText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751694081515520
+    m_Key: ShootText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751812977451008
+    m_Key: RightClick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751963884314624
+    m_Key: LeftClick
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 9110510062635843611
+  references:
+    version: 2
+    RefIds:
+    - rid: 9110510062635843611
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1693415687379

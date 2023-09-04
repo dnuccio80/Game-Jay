@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: ToDoTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 1608173b8e2fb534c95467923f97e756, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 13022617600
+    m_Localized: Visit  John the wrestler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 236184756224
+    m_Localized: Talk to Lila the witch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 411187896320
+    m_Localized: Look for Linda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 536878604288
+    m_Localized: Help Charles the burgerboy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798800306176
+    m_Localized: Help Nick the wizard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1390553686016
+    m_Localized: John the wrestler
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1499433623552
+    m_Localized: "John is a well known and decorated city\nwrestler who has entered
+      and won \nnational and international tournaments.\r\nOn the outside he is a
+      tough man, but on the \ninside he is a person \nwith a big heart.\nIf you help
+      him, no matter \nhow small the favor, \nhe will never forget what \nyou did
+      for him."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2658793775104
+    m_Localized: Lila the witch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2834740633600
+    m_Localized: 'Lila is a witch from the city, known for her
+
+      magic potions
+      to rejuvenate and her spells to
+
+      keep her wild creatures under control.
+
+      She
+      has one of the largest witchcraft
+
+      businesses in the country.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3679217606656
+    m_Localized: 'Linda is a great friend who is always there
+
+      when you need
+      something.
+
+      It never hurts to help friends!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4049809530880
+    m_Localized: Charles the Burgerboy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4166503456768
+    m_Localized: "Charles is a boy from the city who, since he\nwas little, always
+      manages to do business, \nbut he is a very young boy and is very \nexposed
+      to the ills of the street."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4684827156480
+    m_Localized: Nick the wizard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4802544492544
+    m_Localized: "Nick is a well-known magician who moved\nto the city relatively
+      recently. He has a \nvery good relationship with Lila (some say they\nare dating).\r\nIf
+      you help him, he will \nsurely be a very good \nfriend when you need him."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -13,7 +13,9 @@ public class ZombieNavMesh : MonoBehaviour
     [SerializeField] private Transform InterrogationSimbol;
 
     [TextArea]
-    [SerializeField] private string textToUI;
+    [SerializeField] private string textToUIEnglish;
+    [TextArea]
+    [SerializeField] private string textToUISpanish;
     private Animator animator;
     private NavMeshAgent navMeshAgent;
     private bool canFollow = false;
@@ -64,7 +66,14 @@ public class ZombieNavMesh : MonoBehaviour
             if(firstTime)
             {
                 panelUI.SetActive(true);
-                textUI.text = textToUI;
+                if(PlayerPrefs.GetInt("language") == 0)
+                {
+                    textUI.text = textToUIEnglish;
+                } else if (PlayerPrefs.GetInt("language") == 1)
+                {
+                    textUI.text = textToUISpanish;
+                }
+                    
                 InterrogationSimbol.gameObject.SetActive(false);
                 grenTick.gameObject.SetActive(true);
             }

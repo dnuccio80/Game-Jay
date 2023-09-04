@@ -9,7 +9,6 @@ public class PetsUIScript : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI petCountText;
     [SerializeField] private int petsQuantity;
-    [SerializeField] private Transform greenTick;
     [SerializeField] private Transform aura;
 
 
@@ -31,7 +30,6 @@ public class PetsUIScript : MonoBehaviour
 
         if (petsQuantity == 0)
         {
-            greenTick.gameObject.SetActive(true);
             aura.gameObject.SetActive(true);
         }
 
@@ -41,7 +39,6 @@ public class PetsUIScript : MonoBehaviour
     {
         petsQuantity = 4;
         petCountText.text = petsQuantity.ToString();
-        greenTick.gameObject.SetActive(false);
         aura.gameObject.SetActive(false);
     }
 }

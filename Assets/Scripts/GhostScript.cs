@@ -10,13 +10,16 @@ public class GhostScript : MonoBehaviour
     [SerializeField] public TextMeshProUGUI interactiveTextUI;
     [SerializeField] public AudioClip itemObtainedSound;
     [TextArea]
-    [SerializeField] protected string TextToInteractiveUI;
+    [SerializeField] protected string TextToInteractiveUIEnglish;
+    [TextArea]
+    [SerializeField] protected string TextToInteractiveUISpanish;
     [SerializeField] private GameObject panelGameUI;
     [SerializeField] private GameObject miniGameObjects;
     [Header("UI Section")]
     [SerializeField] private GameObject potionMovementUI;
     private Animator animator;
-    protected string textGameDone = "Great! See you soon :)";
+    protected string textGameDoneEnglish = "Great! See you soon :)";
+    protected string textGameDoneSpanish = "Genial! Nos vemos pronto :)";
     public bool canGivePotion = false;
     protected bool miniGameFinished = false;
 
@@ -34,10 +37,26 @@ public class GhostScript : MonoBehaviour
 
             if(miniGameFinished)
             {
-                interactiveTextUI.text = textGameDone;
+                if(PlayerPrefs.GetInt("language") == 0)
+                {
+                    interactiveTextUI.text = textGameDoneEnglish;
+                } else if(PlayerPrefs.GetInt("language") == 1)
+                {
+                    interactiveTextUI.text = textGameDoneSpanish;
+                }
+
             } else
             {
-                interactiveTextUI.text = TextToInteractiveUI;
+                if (PlayerPrefs.GetInt("language") == 0)
+                {
+                    interactiveTextUI.text = TextToInteractiveUIEnglish;
+                }
+                else if (PlayerPrefs.GetInt("language") == 1)
+                {
+                    interactiveTextUI.text = TextToInteractiveUISpanish;
+                }
+
+
             }
 
             if (canGivePotion)

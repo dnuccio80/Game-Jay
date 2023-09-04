@@ -1,0 +1,190 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TestTable_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 658f05f886e301d40b97a3d515aebefc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 31771156480
+    m_Localized: LAS AVENTURAS DE JAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134816817152
+    m_Localized: COMENZAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96795572396032
+    m_Localized: OPCIONES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96858163994624
+    m_Localized: SALIR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96993228972032
+    m_Localized: "VOLUMEN DE M\xDASICA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97093107933184
+    m_Localized: VOLUMEN DE SONIDO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97213274742784
+    m_Localized: LENGUAJE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97267133800448
+    m_Localized: 'Politica de
+
+      privacidad'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97365825773568
+    m_Localized: 'Ayuda y
+
+      Asistencia'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97447673421824
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97509048672256
+    m_Localized: VOLVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99242537738240
+    m_Localized: "Hola Jay ! mi nombre es Frankie, soy amigo cercano de Anthony.
+      Me pidi\xF3 que te ayude a practicar tiro al blanco, asi que vamos a tomar
+      un par de lecciones"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99967758065664
+    m_Localized: "Antes que nada, d\xE9jame presentarte a tu nueva compa\xF1era.
+      Pero ten cuidado ! es muy poderosa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100123937169408
+    m_Localized: "Presionando el click derecho de tu mouse, puedes apuntar, apretando
+      el click izquierdo disparar\xE1s! Y presionando la tecla \"F\" abrir\xE1s la
+      lista de misiones."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100461083713536
+    m_Localized: "Frente a ti, tienes a un par de mu\xF1ecos de entrenamiento, prueba
+      dispararles ! Vamos a practicar !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100649617678336
+    m_Localized: "Genial ! tienes mucha habilidad ! est\xE1s listo para enfrentar
+      cualquier problema ? Vamos !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124722691268608
+    m_Localized: "Presiona el bot\xF3n de interacci\xF3n para aceptar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 346918583885824
+    m_Localized: restantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351805732380672
+    m_Localized: "Misi\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 351862175129600
+    m_Localized: Completa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 352130870632448
+    m_Localized: Coloca los cubos de forma correcta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 353039512068096
+    m_Localized: Junta todas las letras
+    m_Metadata:
+      m_Items: []
+  - m_Id: 354644609294336
+    m_Localized: CERRAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359114638450688
+    m_Localized: TIEMPO AGOTADO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359705901096960
+    m_Localized: REINICIAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360580929380352
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360785439449088
+    m_Localized: REANUDAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 360960933322752
+    m_Localized: CONTROLES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361274231054336
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361372256133120
+    m_Localized: Mover Jugador
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361482205618176
+    m_Localized: "Interacci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361600484990976
+    m_Localized: Abrir Lista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 361987103350784
+    m_Localized: "EL \n     FIN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746090029998080
+    m_Localized: CARGANDO...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747177168429056
+    m_Localized: Interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751485582663680
+    m_Localized: Apuntar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751694081515520
+    m_Localized: Disparar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751812977451008
+    m_Localized: Click Derecho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 751963884314624
+    m_Localized: Click Izquierdo
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
