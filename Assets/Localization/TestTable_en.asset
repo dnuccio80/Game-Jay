@@ -185,6 +185,15 @@ MonoBehaviour:
     m_Localized: Left Click
     m_Metadata:
       m_Items: []
+  - m_Id: 2183684408303616
+    m_Localized: "\rCreated by Dami\xE1n Nuccio Dev for the purpose of showing programming
+      skills in videogames."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185076707516416
+    m_Localized: For help & assistance please contact to nuccio227@gmail.com
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

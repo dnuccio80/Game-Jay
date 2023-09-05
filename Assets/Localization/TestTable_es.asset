@@ -185,6 +185,16 @@ MonoBehaviour:
     m_Localized: Click Izquierdo
     m_Metadata:
       m_Items: []
+  - m_Id: 2183684408303616
+    m_Localized: "Creado por el Damian Nuccio Dev para prop\xF3sitos de muestra de
+      habilidades de programaci\xF3n en videojuegos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185076707516416
+    m_Localized: "Para ayuda y asistencia por favor p\xF3ngase en contacto mediante
+      nuccio227@gmail.com"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
