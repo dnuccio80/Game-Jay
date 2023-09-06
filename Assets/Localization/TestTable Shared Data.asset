@@ -171,6 +171,14 @@ MonoBehaviour:
     m_Key: LeftClick
     m_Metadata:
       m_Items: []
+  - m_Id: 2183684408303616
+    m_Key: CreditsTextDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2185076707516416
+    m_Key: HelpTextDescription
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

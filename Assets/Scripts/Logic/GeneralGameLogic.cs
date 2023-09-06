@@ -141,6 +141,7 @@ public class GeneralGameLogic : MonoBehaviour
         if (!backButtonGamePause.gameObject.activeInHierarchy && !gameOverUI.gameObject.activeInHierarchy)
         {
             HandleToDoList(true);
+            lookMouse.UnlockMouse();
             closeToDoListButton.Select();
         }
 
