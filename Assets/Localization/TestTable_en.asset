@@ -194,6 +194,14 @@ MonoBehaviour:
     m_Localized: For help & assistance please contact to nuccio227@gmail.com
     m_Metadata:
       m_Items: []
+  - m_Id: 2532680783978496
+    m_Localized: PRIVACY POLICY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533087321088000
+    m_Localized: "\rCreated  for showing programming skills purpose. All rights reserved."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

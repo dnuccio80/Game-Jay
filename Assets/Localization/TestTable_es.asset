@@ -195,6 +195,15 @@ MonoBehaviour:
       nuccio227@gmail.com"
     m_Metadata:
       m_Items: []
+  - m_Id: 2532680783978496
+    m_Localized: POLITICA DE PRIVACIDAD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533087321088000
+    m_Localized: "Creado para prop\xF3sitos de muestra de habilidades de programaci\xF3n.
+      Todos los derechos reservados."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
