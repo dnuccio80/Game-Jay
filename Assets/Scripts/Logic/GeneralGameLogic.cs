@@ -36,6 +36,8 @@ public class GeneralGameLogic : MonoBehaviour
     public event EventHandler OnMissionTimeOver;
     public event EventHandler OnRestartByDead;
     public event EventHandler OnAllMissionsCompleted;
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameResumed;
     private LookMouse lookMouse;
     public int numberMission;
     private int missionsCompleted;
@@ -124,6 +126,7 @@ public class GeneralGameLogic : MonoBehaviour
             {
                 pauseGameUI.gameObject.SetActive(true);
                 resumeButtonGamePause.Select();
+                OnGamePaused?.Invoke(this, EventArgs.Empty);
                 HandleTimeScale(0f);
                 lookMouse.UnlockMouse();
                 StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
@@ -133,7 +136,7 @@ public class GeneralGameLogic : MonoBehaviour
         {
             backButtonGamePause.onClick.Invoke();
             StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(true);
-
+            OnGameResumed?.Invoke(this, EventArgs.Empty);
         }
     }
 
