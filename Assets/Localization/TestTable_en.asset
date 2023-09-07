@@ -202,6 +202,10 @@ MonoBehaviour:
     m_Localized: "\rCreated  for showing programming skills purpose. All rights reserved."
     m_Metadata:
       m_Items: []
+  - m_Id: 2901157814296576
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

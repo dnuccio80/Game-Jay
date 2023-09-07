@@ -204,6 +204,10 @@ MonoBehaviour:
       Todos los derechos reservados."
     m_Metadata:
       m_Items: []
+  - m_Id: 2901157814296576
+    m_Localized: Salida
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
