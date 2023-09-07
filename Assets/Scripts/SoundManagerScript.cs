@@ -9,7 +9,8 @@ public class SoundManagerScript : MonoBehaviour
 
     [SerializeField] private AudioClip victorySound;
     [SerializeField] private AudioClip itemObtained;
-    [SerializeField] private AudioClip soundButtonsHover;
+    [SerializeField] private AudioClip clickButtonSound;
+    [SerializeField] private AudioClip hoverButtonSound;
 
     private AudioSource audioSource; 
 
@@ -37,6 +38,11 @@ public class SoundManagerScript : MonoBehaviour
 
     public void PlayButtonHover()
     {
-        audioSource.PlayOneShot(soundButtonsHover, .2f);
+        audioSource.PlayOneShot(hoverButtonSound, .1f);
+    }
+
+    public void PlayClickButton()
+    {
+        audioSource.PlayOneShot(clickButtonSound, .1f);
     }
 }
