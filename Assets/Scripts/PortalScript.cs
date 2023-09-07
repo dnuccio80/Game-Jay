@@ -18,17 +18,9 @@ public class PortalScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && canTraslatePlayer)
         {
-            if(!isElevator)
-            {
-                other.enabled = false;
-                other.transform.position = portalPartner.transform.position + offset;
-                other.enabled = true;
-            } else if(isElevator)
-            {
-                canDescend = true;
-                descendText.gameObject.SetActive(true);
-            }
-           
+             other.enabled = false;
+             other.transform.position = portalPartner.transform.position + offset;
+             other.enabled = true;
         } else if(other.gameObject.tag == "PetInnerCollider")
         {
             other.gameObject.transform.DOScale(Vector3.zero, 0.4f)
@@ -39,29 +31,7 @@ public class PortalScript : MonoBehaviour
                 catched = true;
             }
             Invoke("ScaleToZero", 1);
-            
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag == "Player") {
-            if(isElevator)
-            {
-                canDescend = false;
-            }
-        }
-    }
-
-    private void Start()
-    {
-        StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StarterAssets_OnInteractButtonPressed; ;
-
-    }
-
-    private void StarterAssets_OnInteractButtonPressed(object sender, System.EventArgs e)
-    {
-        
     }
 
     private void ScaleToZero()
