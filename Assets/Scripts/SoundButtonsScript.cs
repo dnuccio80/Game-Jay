@@ -8,6 +8,7 @@ public class SoundButtonsScript : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] private AudioClip hoverButtonSound;
     [SerializeField] private AudioClip clickButtonSound;
+    [SerializeField] private AudioClip testSoundFx;
 
 
     private void Start()
@@ -26,6 +27,12 @@ public class SoundButtonsScript : MonoBehaviour
         }
 
         PlaySoundButton();
+    }
+
+    public void TestSoundVolume()
+    {
+        audioSource.PlayOneShot(testSoundFx, PlayerPrefs.GetInt("sound") / 100f);
+        Debug.Log(PlayerPrefs.GetInt("sound") / 100f);
     }
 
     private void PlaySoundButton()

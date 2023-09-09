@@ -31,6 +31,15 @@ public class MusicManagerScript : MonoBehaviour
         GeneralGameLogic.Instance.OnGameResumed += GeneralGameLogic_OnGameResumed;
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
+
+        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
+        sliderMusicVolume.value = PlayerPrefs.GetInt("music");
+        AudioSoundPrefs.Instance.OnMusicVolumeChanged += AudioSoundPrefs_OnMusicVolumeChanged;
+    }
+
+    private void AudioSoundPrefs_OnMusicVolumeChanged(object sender, System.EventArgs e)
+    {
+        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
     }
 
     private void GeneralGameLogic_OnGameResumed(object sender, System.EventArgs e)
@@ -70,7 +79,8 @@ public class MusicManagerScript : MonoBehaviour
 
     public void ModifyMusicVolume()
     {
-        audioSource.volume = sliderMusicVolume.value;
+        //audioSource.volume = sliderMusicVolume.value;
+        AudioSoundPrefs.Instance.ChangeMusicVolume(sliderMusicVolume.value);
     }
 
     public void PlayMusicMission()

@@ -5818,15 +5818,15 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 0
-  m_Value: 85.8
+  m_WholeNumbers: 1
+  m_Value: 13
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1428281561}
         m_TargetAssemblyTypeName: AudioSoundPrefs, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: ChangeMusicVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5869,7 +5869,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.85800004, y: 1}
+  m_AnchorMax: {x: 0.13, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6774,7 +6774,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.465, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6849,8 +6849,8 @@ RectTransform:
   m_Father: {fileID: 1974973104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.85800004, y: 0}
-  m_AnchorMax: {x: 0.85800004, y: 1}
+  m_AnchorMin: {x: 0.13, y: 0}
+  m_AnchorMax: {x: 0.13, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 28.72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7979,8 +7979,8 @@ RectTransform:
   m_Father: {fileID: 320163295}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.465, y: 0}
+  m_AnchorMax: {x: 0.465, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 28.72, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8917,9 +8917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 142246190}
-  musicVolumeText: {fileID: 1058919954}
-  soundVolumeText: {fileID: 1081201978}
-  languageText: {fileID: 159222209}
+  musicSlider: {fileID: 763364502}
+  soundSlider: {fileID: 1424557762}
+  musicSource: {fileID: 493578445}
 --- !u!114 &1151172163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9752,13 +9752,25 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 46.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicManagerScript, Assembly-CSharp
-        m_MethodName: ModifyMusicVolume
+      - m_Target: {fileID: 1428281561}
+        m_TargetAssemblyTypeName: AudioSoundPrefs, Assembly-CSharp
+        m_MethodName: ChangeSoundVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1771815736}
+        m_TargetAssemblyTypeName: SoundButtonsScript, Assembly-CSharp
+        m_MethodName: TestSoundVolume
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11477,6 +11489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverButtonSound: {fileID: 8300000, guid: 0b11c8c9019be594b8a5004d6495489c, type: 3}
   clickButtonSound: {fileID: 8300000, guid: 98e8129ddcc4ed8408a928986478a8ef, type: 3}
+  testSoundFx: {fileID: 8300000, guid: b27e0d3ce3d84124aa9f86f9379f19ac, type: 3}
 --- !u!4 &1785056421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 455744, guid: f30b04b488e907b4a88bf0e13b603528, type: 3}
