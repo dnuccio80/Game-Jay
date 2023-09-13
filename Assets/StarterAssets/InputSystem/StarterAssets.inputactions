@@ -226,7 +226,18 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a0e605bc-b1c3-4943-91a4-ac2abaa94bda",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -282,6 +293,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
+                    "action": "Interact Alternate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa79e60c-1c54-4471-8980-516c8655b0c8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "Interact Alternate",
                     "isComposite": false,
                     "isPartOfComposite": false
