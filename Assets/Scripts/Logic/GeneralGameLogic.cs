@@ -22,7 +22,8 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] Button closeToDoListButton;
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
-    [SerializeField] Button backButtonControlsUI;
+    [SerializeField] Button backButtonRebindingKeyboard;
+    [SerializeField] Button backButtonRebindingJoystick;
     [SerializeField] Button resumeButtonGamePause;
     [SerializeField] Button restartButtonGameOver;
     [Header("Timelines")]
@@ -113,10 +114,13 @@ public class GeneralGameLogic : MonoBehaviour
         {
             backButtonExplanation.onClick.Invoke();
 
-        } else if (backButtonControlsUI.gameObject.activeInHierarchy)
+        } else if (backButtonRebindingKeyboard.gameObject.activeInHierarchy)
         {
-            backButtonControlsUI.onClick.Invoke();
+            backButtonRebindingKeyboard.onClick.Invoke();
 
+        } else if (backButtonRebindingJoystick.gameObject.activeInHierarchy)
+        {
+            backButtonRebindingJoystick.onClick.Invoke();
         } else if (closeToDoListButton.gameObject.activeInHierarchy)
         {
             closeToDoListButton.onClick.Invoke();

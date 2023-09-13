@@ -191,6 +191,10 @@ MonoBehaviour:
     m_Key: ExitText
     m_Metadata:
       m_Items: []
+  - m_Id: 4693348706508800
+    m_Key: ResetAllText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

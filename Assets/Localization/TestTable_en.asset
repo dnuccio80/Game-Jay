@@ -206,6 +206,10 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 4693348706508800
+    m_Localized: RESET ALL
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

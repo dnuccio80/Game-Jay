@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Assets/Localization/ToDoTable Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 7eb75baff67cd5c4bb26b4d9178b5e11
+    m_Address: Assets/Localization/BindingsPlayer Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 3277d5f0ecd72834a98c52829412eb47, type: 2}
   m_SchemaSet:
