@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System.Collections;
 
 ////TODO: localization support
 
@@ -14,6 +15,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// </summary>
     public class RebindActionUI : MonoBehaviour
     {
+
+        [SerializeField] public Transform errorDuplicatedBindingText;
         /// <summary>
         /// Reference to the action that is to be rebound.
         /// </summary>
@@ -401,6 +404,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
         private bool CheckDuplicateBindings(InputAction action, int bindingIndex, bool allCompositesParts = false)
         {
             InputBinding newBinding = action.bindings[bindingIndex];
+            
+
 
             foreach(InputBinding binding in action.actionMap.bindings)
             {
@@ -412,8 +417,18 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 if(binding.effectivePath == newBinding.effectivePath)
                 {
                     Debug.Log("Duplicated binding found: " + newBinding.effectivePath);
+                    StartCoroutine(ShowErrorRebinding());
                     return true;
+                    
                 }
+            }
+
+            IEnumerator ShowErrorRebinding()
+            {
+                errorDuplicatedBindingText.gameObject.SetActive(true);
+                yield return new WaitForSeconds(1f);
+                errorDuplicatedBindingText.gameObject.SetActive(false);
+
             }
 
             if (allCompositesParts)
