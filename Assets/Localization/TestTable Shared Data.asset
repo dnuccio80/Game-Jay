@@ -195,6 +195,10 @@ MonoBehaviour:
     m_Key: ResetAllText
     m_Metadata:
       m_Items: []
+  - m_Id: 5439242611548160
+    m_Key: ErrorRebindingText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

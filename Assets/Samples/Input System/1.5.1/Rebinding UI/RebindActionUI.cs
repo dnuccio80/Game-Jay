@@ -339,16 +339,51 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             // If it's a part binding, show the name of the part in the UI.
             var partName = default(string);
             if (action.bindings[bindingIndex].isPartOfComposite)
-                partName = $"Binding '{action.bindings[bindingIndex].name}'. ";
+            {
+                if (PlayerPrefs.GetInt("language") == 0) partName = $"Binding '{action.bindings[bindingIndex].name}'. ";
+                else if (PlayerPrefs.GetInt("language") == 1) 
+                {
+                    string _nameBinding = "";
+                    switch(action.bindings[bindingIndex].name)
+                    {
+                        case "up":
+                            _nameBinding = "Arriba";
+                            break;
+                        case "down":
+                            _nameBinding = "Abajo";
+                            break;
+                        case "left":
+                            _nameBinding = "Izquierda";
+                            break;
+                        case "right":
+                            _nameBinding = "Derecha";
+                            break;
+                    }
+
+                    partName = $"Cambiando '{_nameBinding}'. "; 
+                }
+
+
+            }
 
             // Bring up rebind overlay, if we have one.
             m_RebindOverlay?.SetActive(true);
             if (m_RebindText != null)
             {
-                var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
-                    ? $"{partName}Waiting for {m_RebindOperation.expectedControlType} input..."
-                    : $"{partName}Waiting for input...";
-                m_RebindText.text = text;
+                if(PlayerPrefs.GetInt("language") == 0)
+                {
+                    var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
+                        ? $"{partName}Waiting for {m_RebindOperation.expectedControlType} input..."
+                        : $"{partName}Waiting for input...";
+                        m_RebindText.text = text;
+
+                } else if(PlayerPrefs.GetInt("language") == 1)
+                {
+                    var text = !string.IsNullOrEmpty(m_RebindOperation.expectedControlType)
+                        ? $"{partName}Presione la tecla que desea"
+                        : $"{partName}Presiona la tecla que desea";
+                    m_RebindText.text = text;
+                }
             }
 
             // If we have no rebind overlay and no callback but we have a binding text label,

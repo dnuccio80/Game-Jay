@@ -212,6 +212,10 @@ MonoBehaviour:
     m_Localized: RESET TODO
     m_Metadata:
       m_Items: []
+  - m_Id: 5439242611548160
+    m_Localized: "Esa tecla ya est\xE1 asociada a otra acci\xF3n"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
