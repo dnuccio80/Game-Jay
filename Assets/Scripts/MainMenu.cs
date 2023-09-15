@@ -23,13 +23,15 @@ public class MainMenu : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            if(!firstTimeiniciated.instance.GetTrainingStatus())
-            {
-                LoaderScript.Load(LoaderScript.Scene.Training);
-            } else if(firstTimeiniciated.instance.GetTrainingStatus())
-            {
-                LoaderScript.Load(LoaderScript.Scene.Level1Game);
-            }
+            LoaderScript.Load(LoaderScript.Scene.Training);
+
+            //if(!firstTimeiniciated.instance.GetTrainingStatus())
+            //{
+            //    LoaderScript.Load(LoaderScript.Scene.Training);
+            //} else if(firstTimeiniciated.instance.GetTrainingStatus())
+            //{
+            //    LoaderScript.Load(LoaderScript.Scene.Level1Game);
+            //}
         });
     }
 

@@ -54,7 +54,7 @@ public class GeneralGameLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        missionsCompleted = 3;
+        missionsCompleted = 0;
         LoadLevelScene();
         lookMouse = GetComponent<LookMouse>();
         hamburguersGameLogic = GetComponent<HamburguersGameLogic>();

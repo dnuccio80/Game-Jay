@@ -16,7 +16,11 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     public class RebindActionUI : MonoBehaviour
     {
 
-        [SerializeField] public Transform errorDuplicatedBindingText;
+
+        private void Start()
+        {
+        }
+
         /// <summary>
         /// Reference to the action that is to be rebound.
         /// </summary>
@@ -417,19 +421,11 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                 if(binding.effectivePath == newBinding.effectivePath)
                 {
                     Debug.Log("Duplicated binding found: " + newBinding.effectivePath);
-                    StartCoroutine(ShowErrorRebinding());
                     return true;
                     
                 }
             }
 
-            IEnumerator ShowErrorRebinding()
-            {
-                errorDuplicatedBindingText.gameObject.SetActive(true);
-                yield return new WaitForSeconds(1f);
-                errorDuplicatedBindingText.gameObject.SetActive(false);
-
-            }
 
             if (allCompositesParts)
             {
