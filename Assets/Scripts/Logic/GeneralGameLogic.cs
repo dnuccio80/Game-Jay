@@ -210,7 +210,7 @@ public class GeneralGameLogic : MonoBehaviour
 
     public void GoToIntroScene()
     {
-        SceneManager.LoadSceneAsync("Intro", LoadSceneMode.Single);
+        SceneManager.LoadScene("Intro");
     }
 
     private void HandleToDoList(bool status)

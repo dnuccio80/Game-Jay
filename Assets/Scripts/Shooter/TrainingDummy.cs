@@ -17,11 +17,11 @@ public class TrainingDummy : BulletTarget
         {
             animator.SetBool("IsDead", true);
             arrow.gameObject.SetActive(false);
-            TrainingManager.Instance.DecreaseDummiesAlive();    
             foreach (BoxCollider collider in colliders)
             {
                 collider.enabled = false;
             }
+            TrainingManager.Instance.DecreaseDummiesAlive();
         }
     }
 }
