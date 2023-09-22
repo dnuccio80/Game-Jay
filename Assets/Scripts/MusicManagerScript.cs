@@ -44,7 +44,16 @@ public class MusicManagerScript : MonoBehaviour
 
     private void GeneralGameLogic_OnGameResumed(object sender, System.EventArgs e)
     {
-        PlayChillMusic();
+        //Check if we are in a Mission - Return bool isInMission.
+        if(GeneralGameLogic.Instance.GetModeStatus())
+        {
+            PlayMusicMission();
+
+        }
+        else
+        {
+            PlayChillMusic();
+        }
     }
 
     private void GeneralGameLogic_OnGamePaused(object sender, System.EventArgs e)
