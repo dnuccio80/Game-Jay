@@ -22,12 +22,6 @@ public class AudioSoundPrefs : MonoBehaviour
     private void Start()
     {
         LoadData();
-        Invoke("LoadLocal", 0.1f);
-    }
-
-    private void LoadLocal()
-    {
-        // If we need to load something with a delay;
     }
 
     public void ChangeMusicVolume(float _volume)

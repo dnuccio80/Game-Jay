@@ -32,7 +32,6 @@ public class SoundButtonsScript : MonoBehaviour
     public void TestSoundVolume()
     {
         audioSource.PlayOneShot(testSoundFx, PlayerPrefs.GetInt("sound") / 100f);
-        Debug.Log(PlayerPrefs.GetInt("sound") / 100f);
     }
 
     private void PlaySoundButton()

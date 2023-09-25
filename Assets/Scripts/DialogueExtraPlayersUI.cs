@@ -43,9 +43,6 @@ public class DialogueExtraPlayersUI : MonoBehaviour
                     {
                         dialogueUI.text = textDialogueSpanish;
                     }
-
-
-
                 }
                 else
                 {

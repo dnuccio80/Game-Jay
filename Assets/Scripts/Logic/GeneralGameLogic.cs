@@ -32,6 +32,9 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] private PlayableDirector EndingGameTimeline;
 
     private bool isInMission = false;
+    private int missionsCompleted;
+    public int numberMission;
+
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
     public event EventHandler OnMissionTimeOver;
@@ -39,11 +42,9 @@ public class GeneralGameLogic : MonoBehaviour
     public event EventHandler OnAllMissionsCompleted;
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameResumed;
-    private LookMouse lookMouse;
-    public int numberMission;
-    private int missionsCompleted;
-
+    
     private HamburguersGameLogic hamburguersGameLogic;
+    private LookMouse lookMouse;
 
     private void Awake()
     {
@@ -121,9 +122,11 @@ public class GeneralGameLogic : MonoBehaviour
         } else if (backButtonRebindingJoystick.gameObject.activeInHierarchy)
         {
             backButtonRebindingJoystick.onClick.Invoke();
+
         } else if (closeToDoListButton.gameObject.activeInHierarchy)
         {
             closeToDoListButton.onClick.Invoke();
+
         } else if (!pauseGameUI.gameObject.activeInHierarchy)
         {
             if (!gameOverUI.gameObject.activeInHierarchy)
