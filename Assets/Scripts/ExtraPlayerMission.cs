@@ -33,6 +33,7 @@ public class ExtraPlayerMission : MonoBehaviour
     {
         if(interactionState.GetIfCanInteract() && !interactionState.missionIsCompleted)
         {
+            // Return bool isInMission
             if(!GeneralGameLogic.Instance.GetModeStatus())
             {
                 GeneralGameLogic.Instance.ChangeInMissionMode(_numberMission);

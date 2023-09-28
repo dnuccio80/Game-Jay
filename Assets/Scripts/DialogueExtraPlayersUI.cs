@@ -33,6 +33,7 @@ public class DialogueExtraPlayersUI : MonoBehaviour
             if(!GeneralGameLogic.Instance.GetIfAllMissionsCompleted()) canvasDialogue.SetActive(true);
             if(!missionIsCompleted)
             {
+                //Return bool isInMission
                 if (!GeneralGameLogic.Instance.GetModeStatus())
                 {
                     if (PlayerPrefs.GetInt("language") == 0)
