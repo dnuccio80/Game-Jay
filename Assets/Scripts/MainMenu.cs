@@ -10,10 +10,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Button playButton;
 
-    [Header("Texts Modificables")]
-    [SerializeField] private TextMeshProUGUI musicVolumeText;
-    [SerializeField] private TextMeshProUGUI soundVolumeText;
-    [SerializeField] private TextMeshProUGUI languageText;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider soundSlider;
+    [SerializeField] private AudioSource musicSource;
 
     private void OnEnable()
     {
@@ -24,31 +23,30 @@ public class MainMenu : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            if(!firstTimeiniciated.instance.GetTrainingStatus())
-            {
-                LoaderScript.Load(LoaderScript.Scene.Training);
-            } else if(firstTimeiniciated.instance.GetTrainingStatus())
-            {
-                LoaderScript.Load(LoaderScript.Scene.Level1Game);
-            }
+            LoaderScript.Load(LoaderScript.Scene.Training);
+
+            //if(!firstTimeiniciated.instance.GetTrainingStatus())
+            //{
+            //    LoaderScript.Load(LoaderScript.Scene.Training);
+            //} else if(firstTimeiniciated.instance.GetTrainingStatus())
+            //{
+            //    LoaderScript.Load(LoaderScript.Scene.Level1Game);
+            //}
         });
     }
 
-    public void HandleInputLanguage(int val)
+    private void Start()
     {
+       musicSource.volume = PlayerPrefs.GetInt("music")/100f;
+       musicSlider.value = PlayerPrefs.GetInt("music");
+       AudioSoundPrefs.Instance.OnMusicVolumeChanged += AudioSoundPrefs_OnMusicVolumeChanged;
+    }
 
-        if(val == 0)
-        {
-            musicVolumeText.text = "MUSIC VOLUME";
-            soundVolumeText.text = "SOUND VOLUME";
-            languageText.text = "LANGUAGE";
-        }
-        if (val == 1)
-        {
-            musicVolumeText.text = "VOLUMEN DE MUSICA";
-            soundVolumeText.text = "VOLUMEN DE SONIDO";
-            languageText.text = "LENGUAJE";
-        }
+    
+
+    private void AudioSoundPrefs_OnMusicVolumeChanged(object sender, System.EventArgs e)
+    {
+        musicSource.volume = PlayerPrefs.GetInt("music") / 100f;
     }
 
     public void QuitGame()
@@ -57,4 +55,9 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quiting game");
     }
 
+
+    private void OnDestroy()
+    {
+        AudioSoundPrefs.Instance.OnMusicVolumeChanged -= AudioSoundPrefs_OnMusicVolumeChanged;
+    }
 }

@@ -21,7 +21,8 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] Button closeToDoListButton;
     [SerializeField] Button backButtonExplanation;
     [SerializeField] Button backButtonGamePause;
-    [SerializeField] Button backButtonControlsUI;
+    [SerializeField] Button backButtonRebindingKeyboard;
+    [SerializeField] Button backButtonRebindingJoystick;
     [SerializeField] Button resumeButtonGamePause;
     [SerializeField] Button restartButtonGameOver;
     [Header("Timelines")]
@@ -30,16 +31,19 @@ public class GeneralGameLogic : MonoBehaviour
     [SerializeField] private PlayableDirector EndingGameTimeline;
 
     private bool isInMission = false;
+    private int missionsCompleted;
+    public int numberMission;
+
     public event EventHandler OnMissionCompleted;
     public event EventHandler OnMissionPlaying;
     public event EventHandler OnMissionTimeOver;
     public event EventHandler OnRestartByDead;
     public event EventHandler OnAllMissionsCompleted;
-    private LookMouse lookMouse;
-    public int numberMission;
-    private int missionsCompleted;
-
+    public event EventHandler OnGamePaused;
+    public event EventHandler OnGameResumed;
+    
     private HamburguersGameLogic hamburguersGameLogic;
+    private LookMouse lookMouse;
 
     private void Awake()
     {
@@ -50,7 +54,7 @@ public class GeneralGameLogic : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        missionsCompleted = 3;
+        missionsCompleted = 0;
         LoadLevelScene();
         lookMouse = GetComponent<LookMouse>();
         hamburguersGameLogic = GetComponent<HamburguersGameLogic>();
@@ -110,19 +114,25 @@ public class GeneralGameLogic : MonoBehaviour
         {
             backButtonExplanation.onClick.Invoke();
 
-        } else if (backButtonControlsUI.gameObject.activeInHierarchy)
+        } else if (backButtonRebindingKeyboard.gameObject.activeInHierarchy)
         {
-            backButtonControlsUI.onClick.Invoke();
+            backButtonRebindingKeyboard.onClick.Invoke();
+
+        } else if (backButtonRebindingJoystick.gameObject.activeInHierarchy)
+        {
+            backButtonRebindingJoystick.onClick.Invoke();
 
         } else if (closeToDoListButton.gameObject.activeInHierarchy)
         {
             closeToDoListButton.onClick.Invoke();
+
         } else if (!pauseGameUI.gameObject.activeInHierarchy)
         {
             if (!gameOverUI.gameObject.activeInHierarchy)
             {
                 pauseGameUI.gameObject.SetActive(true);
                 resumeButtonGamePause.Select();
+                OnGamePaused?.Invoke(this, EventArgs.Empty);
                 HandleTimeScale(0f);
                 lookMouse.UnlockMouse();
                 StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(false);
@@ -132,7 +142,7 @@ public class GeneralGameLogic : MonoBehaviour
         {
             backButtonGamePause.onClick.Invoke();
             StarterAssets.StarterAssetsInputs.Instance.ChangeCharacterControllerStatus(true);
-
+            OnGameResumed?.Invoke(this, EventArgs.Empty);
         }
     }
 
@@ -196,7 +206,7 @@ public class GeneralGameLogic : MonoBehaviour
 
     public void GoToIntroScene()
     {
-        SceneManager.LoadSceneAsync("Intro", LoadSceneMode.Single);
+        SceneManager.LoadScene("Intro");
     }
 
     private void HandleToDoList(bool status)

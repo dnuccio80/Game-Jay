@@ -10,12 +10,25 @@ public class AuraObject : MonoBehaviour
     [SerializeField] private GameObject game;
     [SerializeField] private Button buttonToDoList;
     [SerializeField] private Transform missionClearedUI;
-
+    [SerializeField] private bool hasTimeOver;
 
     private void Awake()
     {
         gameObject.SetActive(false);
       
+    }
+
+    private void Start()
+    {
+        TimerScript.Instance.OnMissionTimeOver += TimerScript_OnMissionTimeOver;
+    }
+
+    private void TimerScript_OnMissionTimeOver(object sender, System.EventArgs e)
+    {
+        if(hasTimeOver)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void Update()

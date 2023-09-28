@@ -12,6 +12,7 @@ TagManager:
   - Pets
   - BlackWitch
   - PetInnerCollider
+  - ErrorUI
   layers:
   - Default
   - TransparentFX

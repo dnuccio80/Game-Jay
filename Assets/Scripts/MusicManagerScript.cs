@@ -13,6 +13,7 @@ public class MusicManagerScript : MonoBehaviour
     [SerializeField] private AudioClip musicChill;
     [SerializeField] private AudioClip musicTimeOver;
     [SerializeField] private AudioClip musicGameOver;
+    [SerializeField] private AudioClip gamePauseMusic;
     [SerializeField] private Slider sliderMusicVolume;
 
     private void Awake()
@@ -26,8 +27,38 @@ public class MusicManagerScript : MonoBehaviour
         GeneralGameLogic.Instance.OnMissionPlaying += GeneralGameLogic_OnMissionPlaying;
         GeneralGameLogic.Instance.OnMissionCompleted += GeneralGameLogic_OnMissionCompleted;
         GeneralGameLogic.Instance.OnAllMissionsCompleted += GeneralGameLogic_OnAllMissionsCompleted;
+        GeneralGameLogic.Instance.OnGamePaused += GeneralGameLogic_OnGamePaused;
+        GeneralGameLogic.Instance.OnGameResumed += GeneralGameLogic_OnGameResumed;
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
+
+        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
+        sliderMusicVolume.value = PlayerPrefs.GetInt("music");
+        AudioSoundPrefs.Instance.OnMusicVolumeChanged += AudioSoundPrefs_OnMusicVolumeChanged;
+    }
+
+    private void AudioSoundPrefs_OnMusicVolumeChanged(object sender, System.EventArgs e)
+    {
+        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
+    }
+
+    private void GeneralGameLogic_OnGameResumed(object sender, System.EventArgs e)
+    {
+        //Check if we are in a Mission - Return bool isInMission.
+        if(GeneralGameLogic.Instance.GetModeStatus())
+        {
+            PlayMusicMission();
+
+        }
+        else
+        {
+            PlayChillMusic();
+        }
+    }
+
+    private void GeneralGameLogic_OnGamePaused(object sender, System.EventArgs e)
+    {
+        PlayGamePauseMusic();
     }
 
     private void GeneralGameLogic_OnAllMissionsCompleted(object sender, System.EventArgs e)
@@ -57,7 +88,8 @@ public class MusicManagerScript : MonoBehaviour
 
     public void ModifyMusicVolume()
     {
-        audioSource.volume = sliderMusicVolume.value;
+        //audioSource.volume = sliderMusicVolume.value;
+        AudioSoundPrefs.Instance.ChangeMusicVolume(sliderMusicVolume.value);
     }
 
     public void PlayMusicMission()
@@ -70,6 +102,12 @@ public class MusicManagerScript : MonoBehaviour
     {
         audioSource.clip = musicChill;
         audioSource.Play(); 
+    }
+
+    public void PlayGamePauseMusic()
+    {
+        audioSource.clip = gamePauseMusic;
+        audioSource.Play();
     }
 
     public void PlayGameOverMusic()

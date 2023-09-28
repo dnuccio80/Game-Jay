@@ -179,6 +179,26 @@ MonoBehaviour:
     m_Key: HelpTextDescription
     m_Metadata:
       m_Items: []
+  - m_Id: 2532680783978496
+    m_Key: PrivacyPolicyTextBig
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2533087321088000
+    m_Key: PrivacyTextDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2901157814296576
+    m_Key: ExitText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4693348706508800
+    m_Key: ResetAllText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5439242611548160
+    m_Key: ErrorRebindingText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
