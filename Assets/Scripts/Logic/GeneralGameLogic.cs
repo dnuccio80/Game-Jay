@@ -204,6 +204,11 @@ public class GeneralGameLogic : MonoBehaviour
         SceneManager.UnloadSceneAsync("Training");
     }
 
+    public void RemoveLevelScene()
+    {
+        SceneManager.UnloadSceneAsync("Level1Game");
+    }
+
     public void GoToIntroScene()
     {
         SceneManager.LoadScene("Intro");
