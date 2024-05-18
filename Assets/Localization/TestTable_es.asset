@@ -186,13 +186,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2183684408303616
-    m_Localized: "Creado por Damian Nuccio - Desarrollador de videojuegos - para
-      prop\xF3sitos de muestra de habilidades de programaci\xF3n en videojuegos."
+    m_Localized: "Creado por Danuc.Dev para prop\xF3sitos de muestra de habilidades
+      de programaci\xF3n en videojuegos."
     m_Metadata:
       m_Items: []
   - m_Id: 2185076707516416
     m_Localized: "Para ayuda y asistencia por favor p\xF3ngase en contacto mediante
-      nuccio227@gmail.com"
+      danuc.dev@gmail.com"
     m_Metadata:
       m_Items: []
   - m_Id: 2532680783978496
@@ -214,6 +214,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5439242611548160
     m_Localized: "Esa tecla ya est\xE1 asociada a otra acci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94966170955112448
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94964835237060608
+    m_Localized: QUIERES HACER EL TURORIAL?
     m_Metadata:
       m_Items: []
   references:

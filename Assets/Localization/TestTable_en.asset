@@ -186,12 +186,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2183684408303616
-    m_Localized: "\rCreated by Dami\xE1n Nuccio Dev for the purpose of showing programming
-      skills in videogames."
+    m_Localized: "\rCreated by Danuc.Dev for the purpose of showing programming skills
+      in videogames."
     m_Metadata:
       m_Items: []
   - m_Id: 2185076707516416
-    m_Localized: For help & assistance please contact to nuccio227@gmail.com
+    m_Localized: For help & assistance please contact to danuc.dev@gmail.com
     m_Metadata:
       m_Items: []
   - m_Id: 2532680783978496
@@ -212,6 +212,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5439242611548160
     m_Localized: This key is already associated with another action
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94966170955112448
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94964835237060608
+    m_Localized: DO YOU WANT TO PLAY THE TUTORIAL?
     m_Metadata:
       m_Items: []
   references:

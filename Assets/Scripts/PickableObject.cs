@@ -39,8 +39,10 @@ public class PickableObject : MonoBehaviour
     {
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StarterAssets_OnInteractButtonPressed;
         CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
-
+        PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
     }
+
+    
 
     private void CubicGameLogic_OnRestartGame(object sender, EventArgs e)
     {
@@ -69,11 +71,21 @@ public class PickableObject : MonoBehaviour
             isPicked = false;
             StarterAssets.StarterAssetsInputs.Instance.ChangeObjectStatus(false, 8f, true);
             StopCoroutine("DropObject");
+            StopCoroutine("DropObject");
             canInteract = true;
             pickableGameCamera.gameObject.SetActive(false);
             CubicGameLogic.Instance.hasAnObject = false;
             
         }
+    }
+
+    private void PlayerStats_OnPlayerDeath(object sender, EventArgs e)
+    {
+        myRB.useGravity = true;
+        myRB.isKinematic = false;
+        gameObject.transform.SetParent(null);
+        isPicked = false;
+        CubicGameLogic.Instance.hasAnObject = false;
     }
 
     private void OnTriggerStay(Collider other)

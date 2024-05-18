@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
+    public event EventHandler OnPlayButtonPressed;
 
     [SerializeField] private Button playButton;
 
@@ -23,15 +25,8 @@ public class MainMenu : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            LoaderScript.Load(LoaderScript.Scene.Training);
-
-            //if(!firstTimeiniciated.instance.GetTrainingStatus())
-            //{
-            //    LoaderScript.Load(LoaderScript.Scene.Training);
-            //} else if(firstTimeiniciated.instance.GetTrainingStatus())
-            //{
-            //    LoaderScript.Load(LoaderScript.Scene.Level1Game);
-            //}
+            //LoaderScript.Load(LoaderScript.Scene.Training, true);
+            OnPlayButtonPressed?.Invoke(this, EventArgs.Empty);
         });
     }
 

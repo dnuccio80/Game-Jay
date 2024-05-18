@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class MusicManagerScript : MonoBehaviour
 {
-
     public static MusicManagerScript Instance { get; private set; }
     private AudioSource audioSource;
+
+    private const string PLAYER_PREFS_MUSIC = "music";
+    private int musicVolumeDefault = 3;
 
     [SerializeField] private AudioClip musicForMissions;
     [SerializeField] private AudioClip musicChill;
@@ -32,14 +34,14 @@ public class MusicManagerScript : MonoBehaviour
         PlayerStats.Instance.OnPlayerDeath += PlayerStats_OnPlayerDeath;
         PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
 
-        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
-        sliderMusicVolume.value = PlayerPrefs.GetInt("music",3);
+        audioSource.volume = PlayerPrefs.GetInt(PLAYER_PREFS_MUSIC, musicVolumeDefault) / 100f;
+        sliderMusicVolume.value = PlayerPrefs.GetInt(PLAYER_PREFS_MUSIC, musicVolumeDefault);
         AudioSoundPrefs.Instance.OnMusicVolumeChanged += AudioSoundPrefs_OnMusicVolumeChanged;
     }
 
     private void AudioSoundPrefs_OnMusicVolumeChanged(object sender, System.EventArgs e)
     {
-        audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
+        audioSource.volume = PlayerPrefs.GetInt(PLAYER_PREFS_MUSIC, musicVolumeDefault) / 100f;
     }
 
     private void GeneralGameLogic_OnGameResumed(object sender, System.EventArgs e)

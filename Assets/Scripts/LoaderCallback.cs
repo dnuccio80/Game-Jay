@@ -13,10 +13,7 @@ public class LoaderCallback : MonoBehaviour
             isFirstUpdate = false;
 
             LoaderScript.LoaderCallback();
-        } 
-            
-
-
-
+        }
     }
+
 }
