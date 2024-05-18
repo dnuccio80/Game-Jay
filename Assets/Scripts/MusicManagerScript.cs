@@ -33,7 +33,7 @@ public class MusicManagerScript : MonoBehaviour
         PlayerStats.Instance.OnPlayerRevive += PlayerStats_OnPlayerRevive;
 
         audioSource.volume = PlayerPrefs.GetInt("music") / 100f;
-        sliderMusicVolume.value = PlayerPrefs.GetInt("music");
+        sliderMusicVolume.value = PlayerPrefs.GetInt("music",3);
         AudioSoundPrefs.Instance.OnMusicVolumeChanged += AudioSoundPrefs_OnMusicVolumeChanged;
     }
 

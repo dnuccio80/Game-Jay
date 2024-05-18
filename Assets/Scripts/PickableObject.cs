@@ -39,6 +39,7 @@ public class PickableObject : MonoBehaviour
     {
         StarterAssets.StarterAssetsInputs.Instance.OnInteractButtonPressed += StarterAssets_OnInteractButtonPressed;
         CubicGameLogic.Instance.OnRestartGame += CubicGameLogic_OnRestartGame;
+
     }
 
     private void CubicGameLogic_OnRestartGame(object sender, EventArgs e)
