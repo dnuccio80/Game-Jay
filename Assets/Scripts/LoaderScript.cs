@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Bson;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ public static class LoaderScript
 
     private static Scene targetScene;
     private static bool hasAdditiveScene;
+    private static bool wantToPlayTraining;
 
     public static void Load(Scene targetScene, bool _hasAdditiveScene)
     {
@@ -30,19 +32,28 @@ public static class LoaderScript
 
     public static void LoaderCallback()
     {
-        (hasAdditiveScene ? (Action)LoadAdditiveScene : LoadSingleScene)();
+        (hasAdditiveScene ? (Action)LoadGamingScene : LoadSingleScene)();
     }
 
-    private static void LoadAdditiveScene()
+    private static void LoadGamingScene()
     {
-        SceneManager.LoadScene(Scene.DatesScene.ToString(), LoadSceneMode.Single);
-        SceneManager.LoadSceneAsync(targetScene.ToString(), LoadSceneMode.Additive);
+        SceneManager.LoadScene(Scene.DatesScene.ToString());
+        SceneManager.LoadScene(targetScene.ToString(), LoadSceneMode.Additive);
     }
 
     private static void LoadSingleScene()
     {
         SceneManager.LoadScene(targetScene.ToString());
+    }
 
+    public static void ChangeTrainingPlayStatus(bool _newTrainingStatus)
+    {
+        wantToPlayTraining = _newTrainingStatus;
+    }
+
+    public static bool GetIfWantToPlayTraining()
+    {
+        return wantToPlayTraining;
     }
 
 }

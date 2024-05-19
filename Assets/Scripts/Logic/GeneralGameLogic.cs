@@ -250,5 +250,7 @@ public class GeneralGameLogic : MonoBehaviour
         if (missionsCompleted == 5) return true;
         else return false;
     }
+
+
 }
     

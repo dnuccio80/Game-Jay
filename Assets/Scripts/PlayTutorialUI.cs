@@ -10,6 +10,22 @@ public class PlayTutorialUI : MonoBehaviour
     [SerializeField] private Button playTutorialButton;
     [SerializeField] private Button skipTutorialButton;
 
+    private void Awake()
+    {
+        playTutorialButton.onClick.AddListener(() =>
+        {
+            LoaderScript.ChangeTrainingPlayStatus(true);
+            LoaderScript.Load(LoaderScript.Scene.Training, true);
+
+        });
+
+        skipTutorialButton.onClick.AddListener(() =>
+        {
+            LoaderScript.ChangeTrainingPlayStatus(false);
+            LoaderScript.Load(LoaderScript.Scene.Level1Game, true);
+        });
+    }
+
     private void Start()
     {
         mainMenu.OnPlayButtonPressed += MainMenu_OnPlayButtonPressed;

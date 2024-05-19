@@ -25,8 +25,7 @@ public class MainMenu : MonoBehaviour
     {
         playButton.onClick.AddListener(() =>
         {
-            //LoaderScript.Load(LoaderScript.Scene.Training, true);
-            OnPlayButtonPressed?.Invoke(this, EventArgs.Empty);
+            LoaderScript.Load(LoaderScript.Scene.Training, true);
         });
     }
 
@@ -47,7 +46,6 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quiting game");
     }
 
 
